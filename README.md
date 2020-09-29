@@ -1,4 +1,4 @@
-<h1 align="center">RiddlesWorld</h1>
+<h1>RiddlesWorld</h1>
 
 
 An Application with lots of Riddles 🤩. 
