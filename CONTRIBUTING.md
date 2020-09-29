@@ -51,19 +51,19 @@ here, than you are on the right place, here are the steps that how you can contr
  ### 6. Now it's time to save the work
       
   - Stage the changes you have made by firing the below command
-   > git add -A
+    > git add -A
   - Commit the changes 
-   > git commit -m "Description of changes/your work"
+    > git commit -m "Description of changes/your work"
   - Push the changes to your forked repo
-   > git push origin master
+    > git push origin master
   
 ### 7. Let's finish this
   
   - Go to your forked repo on GitHub website and refresh the page, you'll see something like the below image
-  ![pr1](https://user-images.githubusercontent.com/58077762/93778051-172c2980-fc43-11ea-97bb-410e1689df4d.png)
+  ![pr1](https://user-images.githubusercontent.com/57007680/94609340-3fa7c980-02bc-11eb-90dd-269a433b00e0.PNG)
         
   - Click on pull-request and you will be redirected to another page where you will see something like below image
-  ![pr2](https://user-images.githubusercontent.com/58077762/93778056-185d5680-fc43-11ea-8477-a2b6773266e2.png)
+  ![pr2](https://user-images.githubusercontent.com/57007680/94609343-420a2380-02bc-11eb-83f1-c6157417c50d.PNG)
         
   - After that you have to write your GitHub username as the title of your pull-request and describe your work if you want and that's it!!
     Create a pull-request by clicking the button
