@@ -9,7 +9,7 @@ Read the [CONTRIBUTING.md](https://github.com/clubgamma/RiddlesWorld/blob/master
 
 ## Getting Started
 
-#A few resources to get you started if this is your first Flutter project:
+#### A few resources to get you started if this is your first Flutter project:
 
 - [Install Flutter](https://flutter.dev/docs/get-started/install)
 - [Flutter documentation](https://flutter.dev/docs)
