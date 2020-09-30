@@ -10,30 +10,26 @@ class _StateMathRiddles extends State<MathRiddles> {
   @override
   Widget build(BuildContext context) {
     return RiddleBar(
-      title: 'MathRiddles',
+      title: 'MATH RIDDLES',
       body: SingleChildScrollView(
         child: Center(
             child: Column(
           children: [
-            CategoryCard(
+            ActionCard(
                 icon: Icons.group,
-                //    color: Colors.yellow,
                 name: 'RIDDLE 1',
                 description: 'PLACEHOLDER TEXT',
                 number: '1',
                 onPressed: () {
-                  // Navigator.push(context,
-                  //     new MaterialPageRoute(builder: (context) => TeamPage()));
+
                 }),
-            CategoryCard(
+            ActionCard(
                 icon: Icons.group,
-                //    color: Colors.yellow,
                 name: 'RIDDLE 2',
                 description: 'PLACEHOLDER TEXT',
                 number: '2',
                 onPressed: () {
-                  // Navigator.push(context,
-                  //     new MaterialPageRoute(builder: (context) => TeamPage()));
+
                 }),
           ],
         )),
@@ -42,20 +38,20 @@ class _StateMathRiddles extends State<MathRiddles> {
   }
 }
 
-class CategoryCard extends StatelessWidget {
+class ActionCard extends StatelessWidget {
   final Function onPressed;
   final IconData icon;
   final String name;
   final String number;
   final String description;
 
-  const CategoryCard(
+  const ActionCard(
       {Key key,
-      this.onPressed,
+      @required this.onPressed,
       this.icon,
-      this.name,
-      this.number,
-      this.description})
+      @required this.name,
+      @required this.number,
+      @required this.description})
       : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -64,23 +60,56 @@ class CategoryCard extends StatelessWidget {
       child: InkWell(
         onTap: onPressed,
         child: Container(
-            decoration:
-                BoxDecoration(border: Border.all(), color: Colors.transparent),
-            width: MediaQuery.of(context).size.width,
-            child: ListTile(
-              leading: Text(number,
+          padding: EdgeInsets.all(13),
+          decoration: BoxDecoration(
+              border: Border.all(width: 2), color: Colors.transparent),
+          width: MediaQuery.of(context).size.width,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                width: 10,
+                child: Text(
+                  number,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                  )),
-              title: Text(
-                name,
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
                 ),
               ),
-              subtitle: Text(description),
-            )),
+              SizedBox(
+                width: 15,
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    child: Text(
+                      name,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 17,
+                      ),
+                    ),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width * 0.75,
+                    child: Text(
+                      description,
+                      style: TextStyle(
+                        fontSize: 12,
+                      ),
+                    ),
+                  ),
+                ],
+              )
+            ],
+          ),
+        ),
       ),
     );
   }
 }
+

@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:riddleworld/universal/riddleAppbar.dart';
 
-class WordsRiddleList extends StatefulWidget {
+class FindTheThingList extends StatefulWidget {
   @override
-  _StateWordsRiddleList createState() => _StateWordsRiddleList();
+  _StateFindTheThingList createState() => _StateFindTheThingList();
 }
 
-class _StateWordsRiddleList extends State<WordsRiddleList> {
+class _StateFindTheThingList extends State<FindTheThingList> {
   @override
   Widget build(BuildContext context) {
     return RiddleBar(
-      title: 'WORDS RIDDLE',
+      title: 'FIND THE THING',
       body: SingleChildScrollView(
         child: Center(
             child: Column(
           children: [
-           ActionCard(
-                name: 'WORD RIDDLE',
+            ActionCard(
+                name: 'WHAT THING',
                 description:
                     '''EDIT THIS''',
                 number: '1',

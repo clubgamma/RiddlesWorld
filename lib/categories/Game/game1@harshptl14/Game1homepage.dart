@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:riddleworld/universal/riddleAppbar.dart';
 import 'dart:math';
-import 'result.dart';
+import '../../../universal/result.dart';
 import 'colors.dart';
 import 'randomRGB.dart';
 
@@ -28,7 +28,6 @@ class _FirstGameState extends State<FirstGame> {
     if (r == randomR && g == randomG && b == randomB) {
       Fluttertoast.cancel();
       Fluttertoast.showToast(
-
           msg: "CORRECT",
           toastLength: Toast.LENGTH_SHORT,
           gravity: ToastGravity.BOTTOM,

@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:riddleworld/categories/FindTheThing/FindTheThingList.dart';
+import 'package:riddleworld/categories/Game/ListOfGames.dart';
+import 'package:riddleworld/categories/Math/MathRiddlelLists.dart';
+import 'package:riddleworld/categories/Puzzle/PuzzleList.dart';
+import 'package:riddleworld/categories/WhatSong/whatSongList.dart';
+import 'package:riddleworld/categories/words/WordriddleLists.dart';
 import 'package:riddleworld/homePage.dart';
-import 'package:riddleworld/riddleWorld.dart';
+import 'package:riddleworld/universal/riddleWorld.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -39,7 +45,7 @@ class _RiddleWorldHomeState extends State<RiddleWorldHome> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Riddle World',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         fontFamily: RiddleWorld.google_sans_family,
@@ -55,6 +61,15 @@ class _RiddleWorldHomeState extends State<RiddleWorldHome> {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: Categories(),
+      routes: {
+        '/gamePage' : (_) => GameLists(),
+        '/mathPage' : (_) => MathRiddles(),
+        '/homePage' : (_) => Categories(),
+        '/findThingPage' : (_) => FindTheThingList(),
+        '/puzzlePage' : (_) => PuzzleList(),
+        '/whatSongPage' : (_) => WhatSongList(),
+        '/wordPage' : (_) => WordsRiddleList(),
+      },
     );
   }
 }
