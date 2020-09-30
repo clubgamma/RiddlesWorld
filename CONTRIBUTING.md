@@ -1,10 +1,8 @@
-# Welcome to the How to contribute section 🤝
+# Welcome to the contributing section 🤝
 
-Flutter has given developers a super power to create innovative and creative UIs for Mobile and Desktop both 🦾😎. 
+Flutter has given developers a super power to create innovative and creative UIs for Mobile and Desktop both 🦾. 
 
-So why don't we create something awesome and contribute to Flutter community and also show the power or height of feasibility for creating beautiful things🤩 and if you want to contribute then you are at the right place☑!!
-
-here, than you are on the right place, here are the steps that how you can contribute to this project!!
+So why don't we create something awesome and contribute to Flutter community and also show the power or height of feasibility for creating beautiful things🤩 and if you want to contribute. than you are at the right place, here are the steps how you can contribute to this project!!
 
 ### 1. READ CODE OF CONDUCT
    Read the [Code of Conduct](https://github.com/clubgamma/code-of-conduct) before starting contributing.
@@ -31,7 +29,7 @@ here, than you are on the right place, here are the steps that how you can contr
       
   - Now you have to setup **upstream**. For that write the below git command
       
-    > git remote add upstream https://github.com/clubgamma/Awesome-Flutter-Art
+    > git remote add upstream https://github.com/clubgamma/RiddlesWorld
         
   - Now pull the latest changes from original repo to your local changes by firing thee below command
         
