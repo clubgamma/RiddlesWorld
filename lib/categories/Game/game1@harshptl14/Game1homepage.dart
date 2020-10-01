@@ -114,7 +114,7 @@ class _FirstGameState extends State<FirstGame> {
                 ],
               ),
             )
-          : Result(totalScore, questionCount, resetHanlder),
+          : Result(totalScore, questionCount, resetHanlder,'/gamePage'),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:riddleworld/categories/Math/math1@jerry2501/math1HomePage.dart';
 import 'package:riddleworld/universal/riddleAppbar.dart';
 
 class MathRiddles extends StatefulWidget {
@@ -16,20 +17,11 @@ class _StateMathRiddles extends State<MathRiddles> {
             child: Column(
           children: [
             ActionCard(
-                icon: Icons.group,
-                name: 'RIDDLE 1',
-                description: 'PLACEHOLDER TEXT',
+                name: 'FUNNY SUBTRACTION',
+                description: 'A MATH RIDDLE THAT WILL BLOW YOUR MIND!!',
                 number: '1',
                 onPressed: () {
-
-                }),
-            ActionCard(
-                icon: Icons.group,
-                name: 'RIDDLE 2',
-                description: 'PLACEHOLDER TEXT',
-                number: '2',
-                onPressed: () {
-
+                  Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>math1HomeScreen()));
                 }),
           ],
         )),

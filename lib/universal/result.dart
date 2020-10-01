@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 class Result extends StatelessWidget {
   final int score;
   final int questions;
-
+   final String navigationPage;
   final Function resetHandler;
 
-  Result(this.score, this.questions, this.resetHandler);
+  Result(this.score, this.questions, this.resetHandler,this.navigationPage);
 
   @override
   Widget build(BuildContext context) {
@@ -64,7 +64,7 @@ class Result extends StatelessWidget {
             padding: const EdgeInsets.only(top:10.0, right: 10, left: 10),
             child: InkWell(
               onTap: (){
-                 Navigator.of(context).pop('/gamePage');
+                 Navigator.of(context).pop(navigationPage);
               },
               child: Container(
                 padding: EdgeInsets.all(10),
