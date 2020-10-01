@@ -1,28 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:riddleworld/universal/result.dart';
 import 'package:riddleworld/universal/riddleAppbar.dart';
-class math1HomeScreen extends StatefulWidget { 
+
+class Math1HomeScreen extends StatefulWidget {
   @override
-  _math1HomeScreenState createState() =>  _math1HomeScreenState();
+  _Math1HomeScreenState createState() => _Math1HomeScreenState();
 }
 
-class _math1HomeScreenState  extends State<math1HomeScreen> {
+class _Math1HomeScreenState extends State<Math1HomeScreen> {
   int number;
-  bool _isScore=false;
-  int totalScore=0;
+  bool _isScore = false;
+  int totalScore = 0;
 
   void resetHanlder() {
     setState(() {
       totalScore = 0;
+      _isScore = false;
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return RiddleBar(
-      title: 'Funny Subtraction',
-      body: _isScore?
-      Result(totalScore, 1, resetHanlder,'/mathPage')
-      :Column(
+      title: 'FUNNY SUBTRACTION',
+      body: _isScore
+          ? Result(totalScore, 1, resetHanlder, '/mathPage')
+          : Center(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   SizedBox(
                     height: 10,
@@ -30,7 +35,7 @@ class _math1HomeScreenState  extends State<math1HomeScreen> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
-                      padding: EdgeInsets.all(10),
+                        padding: EdgeInsets.all(10),
                         decoration: BoxDecoration(
                             border: Border.all(width: 1.6),
                             color: Colors.transparent),
@@ -42,7 +47,6 @@ class _math1HomeScreenState  extends State<math1HomeScreen> {
                               style: TextStyle(fontSize: 15),
                             ))),
                   ),
-                          
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
@@ -53,53 +57,57 @@ class _math1HomeScreenState  extends State<math1HomeScreen> {
                           color: Colors.transparent),
                       child: Column(
                         children: [
-                           TextField(
-                             decoration: InputDecoration(
-                               labelText: 'Answer',
-                               hintText: 'Enter answer in numbers!!'
-                             ),
-                             keyboardType: TextInputType.number,
-                             onChanged: (value)=>number=int.parse(value),
-                           ),
-                              SizedBox(height: 60,),
-                              Padding(
-            padding: const EdgeInsets.only(top:10.0, right: 10, left: 10),
-            child: InkWell(
-              onTap: (){
-                 if(number == 1){
-                                  
-                                   setState(() {
-                                     totalScore=1;
-                                  _isScore=true;
-                                });
+                          TextField(
+                            decoration: InputDecoration(
+                                labelText: 'Answer',
+                                hintText: 'Enter answer in numbers!!'),
+                            keyboardType: TextInputType.number,
+                            onChanged: (value) => number = int.parse(value),
+                          ),
+                          SizedBox(
+                            height: 60,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(
+                                top: 10.0, right: 10, left: 10),
+                            child: InkWell(
+                              onTap: () {
+                                if (number == 1) {
+                                  setState(() {
+                                    totalScore = 1;
+                                    _isScore = true;
+                                  });
+                                } else {
+                                  setState(() {
+                                    totalScore = 0;
+                                    _isScore = true;
+                                  });
                                 }
-                                else{
-                                  return;
-                                }
-              },
-              child: Container(
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                    border: Border.all(width: 1.6), color: Colors.transparent),
-                width: MediaQuery.of(context).size.width * 0.9,
-                child: Text(
-                  'SUBMIT',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ),
-            ),
-          ),
-                             
+                              },
+                              child: Container(
+                                padding: EdgeInsets.all(10),
+                                decoration: BoxDecoration(
+                                    border: Border.all(width: 1.6),
+                                    color: Colors.transparent),
+                                width: MediaQuery.of(context).size.width * 0.9,
+                                child: Text(
+                                  'SUBMIT',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontSize: 25,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
                         ],
                       ),
                     ),
                   ),
                 ],
               ),
+            ),
     );
   }
 }

@@ -72,7 +72,7 @@ class Result extends StatelessWidget {
                     border: Border.all(width: 1.6), color: Colors.transparent),
                 width: MediaQuery.of(context).size.width * 0.9,
                 child: Text(
-                  'BACK TO GAME LIST',
+                  'BACK TO $navigationPage',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 25,

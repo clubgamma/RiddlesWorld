@@ -18,10 +18,10 @@ class _StateMathRiddles extends State<MathRiddles> {
           children: [
             ActionCard(
                 name: 'FUNNY SUBTRACTION',
-                description: 'A MATH RIDDLE THAT WILL BLOW YOUR MIND!!',
+                description: 'A MATH RIDDLE THAT WILL BLOW YOUR MIND!!\nby @jerry2501',
                 number: '1',
                 onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>math1HomeScreen()));
+                  Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>Math1HomeScreen()));
                 }),
           ],
         )),
