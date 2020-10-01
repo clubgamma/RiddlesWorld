@@ -62,13 +62,13 @@ class _RiddleWorldHomeState extends State<RiddleWorldHome> {
       ),
       home: Categories(),
       routes: {
-        '/gamePage' : (_) => GameLists(),
-        '/mathPage' : (_) => MathRiddles(),
-        '/homePage' : (_) => Categories(),
-        '/findThingPage' : (_) => FindTheThingList(),
-        '/puzzlePage' : (_) => PuzzleList(),
-        '/whatSongPage' : (_) => WhatSongList(),
-        '/wordPage' : (_) => WordsRiddleList(),
+        '/gamePage': (_) => GameLists(),
+        '/mathPage': (_) => MathRiddles(),
+        '/homePage': (_) => Categories(),
+        '/findThingPage': (_) => FindTheThingList(),
+        '/puzzlePage': (_) => PuzzleList(),
+        '/whatSongPage': (_) => WhatSongList(),
+        '/wordPage': (_) => WordsRiddleList(),
       },
     );
   }
