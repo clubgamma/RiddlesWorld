@@ -39,12 +39,36 @@ So why don't we create something awesome and contribute to Flutter community and
   - Open cloned Project in your favourite IDE. After that go to the lib->categories. In categories choose the folder in which you want to create riddle and in that perticular Category, create
     one folder named **(Categoryname + currentOrderNumber + @yourUserName)** . Boom, that's your playground, create your own riddle in it! Still not got it, don't worry, here is the example.
      
-     ![FolderExample](https://user-images.githubusercontent.com/57007680/94572422-a0201200-028e-11eb-92e6-41bc2a6af9a0.PNG)
+     ![FolderExample](https://user-images.githubusercontent.com/57007680/94863822-afeb5200-0458-11eb-8e37-916d869b0739.png)
+     
+ - In that playgroung create as many files as you want, here is the [simplest file example](https://github.com/clubgamma/RiddlesWorld/blob/master/lib/categories/Math/math1%40jerry2501/math1HomePage.dart).
+ 
+ **Visual Example:**
+ 
+ <img src="https://user-images.githubusercontent.com/57007680/94865538-66503680-045b-11eb-87ae-200b407077e2.png" width="200" height="400" />
 
- - After Creating your riddle, you have to go **ListOfGames.dart** file and call the **ActionCard** class which is already created. Pass the required argument like Name, discreption, orderNumber
+   
+ After Player complete the Riddle, You want to print the score of the player right👀, than you can use this [result file](https://github.com/clubgamma/RiddlesWorld/blob/master/lib/universal/result.dart) which is universal. It will take certain parameter, do check before using it!
+   
+  **Visual Example:**
+ 
+ <img src="https://user-images.githubusercontent.com/57007680/94865607-81bb4180-045b-11eb-8c9e-4d3938b89a56.png" width="200" height="400" />
+   
+   Use a universal AppBar throughout the application which is [here](https://github.com/clubgamma/RiddlesWorld/blob/master/lib/universal/riddleAppbar.dart).
+
+ - After Creating your riddle, you have to go **MathRiddleLists.dart** file and call the **ActionCard** class which is already created. Pass the required argument like Name, discreption, orderNumber
    etc. In OnPressed, give the className which you have created just now in your playground, I mean in your folder😉 Example below!
    
-   ![FileExample](https://user-images.githubusercontent.com/57007680/94575402-d4490200-0291-11eb-93f7-c431427be883.png)
+   ![FileExample](https://user-images.githubusercontent.com/57007680/94866704-76691580-045d-11eb-9859-09d56968ac46.png)
+   
+    **Visual Example:**
+    
+   <img src="https://user-images.githubusercontent.com/57007680/94865382-1a9d8d00-045b-11eb-9e48-b1dad34da09a.png" width="200" height="400" />
+   
+   It is compulsory to keep the same layout for list of categories and list of Riddles in particular categories as sawn above.
+
+   Boom, You have successfully added one Riddle🔥✨
+   
    
  ### 6. Now it's time to save the work
       
