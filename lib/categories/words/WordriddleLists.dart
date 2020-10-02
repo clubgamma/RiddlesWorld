@@ -13,18 +13,16 @@ class _StateWordsRiddleList extends State<WordsRiddleList> {
       title: 'WORDS RIDDLE',
       body: SingleChildScrollView(
         child: Center(
-            child: Column(
-          children: [
-           ActionCard(
-                name: 'WORD RIDDLE',
-                description:
-                    '''EDIT THIS''',
-                number: '1',
-                onPressed: () {
-                }
-                ),
-          ],
-        )),
+          child: Column(
+            children: [
+              ActionCard(
+                  name: 'WORD RIDDLE',
+                  description: '''EDIT THIS''',
+                  number: '1',
+                  onPressed: () {}),
+            ],
+          ),
+        ),
       ),
     );
   }
