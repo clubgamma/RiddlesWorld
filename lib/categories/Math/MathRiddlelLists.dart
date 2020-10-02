@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:riddleworld/categories/Math/math1@jerry2501/math1HomePage.dart';
+import 'package:riddleworld/categories/Math/math3@shobhit907/math3@HomePage.dart';
 import 'package:riddleworld/universal/riddleAppbar.dart';
 
 import 'math2@Stephen-Odumirin/math2HomePage.dart';
@@ -35,6 +36,16 @@ class _StateMathRiddles extends State<MathRiddles> {
                 onPressed: () {
                   Navigator.of(context).push(
                       MaterialPageRoute(builder: (ctx) => Math2HomeScreen()));
+                },
+              ),
+              ActionCard(
+                name: 'TOO MUCH COUNTING',
+                description:
+                    'A Math riddle that might be solved by OBSERVATION \n by @shobhit907',
+                number: '3',
+                onPressed: () {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (ctx) => Math3HomeScreen()));
                 },
               ),
             ],

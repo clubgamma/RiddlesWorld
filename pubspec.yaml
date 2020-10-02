@@ -11,15 +11,14 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  fluttertoast:
+  fluttertoast: null
   cupertino_icons: ^0.1.3
   flutter_svg: ^0.18.0
-
+  image_picker: ^0.6.7+11
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
 
 flutter:
   uses-material-design: true
@@ -36,3 +35,4 @@ flutter:
     - family: GoogleSans
       fonts:
         - asset: assets/fonts/GoogleSansRegular.ttf
+
