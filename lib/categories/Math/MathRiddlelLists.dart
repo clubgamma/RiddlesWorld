@@ -3,6 +3,8 @@ import 'package:riddleworld/categories/Math/math1@jerry2501/math1HomePage.dart';
 import 'package:riddleworld/categories/Math/math3@Denish-Ranpariya/math3_home_screen.dart';
 import 'package:riddleworld/universal/riddleAppbar.dart';
 
+import 'math2@Stephen-Odumirin/math2HomePage.dart';
+
 class MathRiddles extends StatefulWidget {
   @override
   _StateMathRiddles createState() => _StateMathRiddles();
@@ -15,18 +17,28 @@ class _StateMathRiddles extends State<MathRiddles> {
       title: 'MATH RIDDLES',
       body: SingleChildScrollView(
         child: Center(
-            child: Column(
-          children: [
-            ActionCard(
-                name: 'FUNNY SUBTRACTION',
+          child: Column(
+            children: [
+              ActionCard(
+                  name: 'FUNNY SUBTRACTION',
+                  description:
+                      'A MATH RIDDLE THAT WILL BLOW YOUR MIND!!\nby @jerry2501',
+                  number: '1',
+                  onPressed: () {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (ctx) => Math1HomeScreen()));
+                  }),
+              ActionCard(
+                name: 'SIMPLE BUT TRICKY DIVISION',
                 description:
-                    'A MATH RIDDLE THAT WILL BLOW YOUR MIND!!\nby @jerry2501',
-                number: '1',
+                    'A Math riddle that might trick you if not careful \n by @Stephen-Odumirin',
+                number: '2',
                 onPressed: () {
                   Navigator.of(context).push(
-                      MaterialPageRoute(builder: (ctx) => Math1HomeScreen()));
-                }),
-            ActionCard(
+                      MaterialPageRoute(builder: (ctx) => Math2HomeScreen()));
+                },
+              ),
+              ActionCard(
                 name: 'GREATEST BINARY',
                 description:
                     'A MATH RIDDLE TO FIND GREATEST BINARY NUMBER!!\nby @Denish-Ranpariya',
@@ -35,8 +47,9 @@ class _StateMathRiddles extends State<MathRiddles> {
                   Navigator.of(context).push(
                       MaterialPageRoute(builder: (ctx) => Math3HomeScreen()));
                 }),
-          ],
-        )),
+            ],
+          ),
+        ),
       ),
     );
   }
