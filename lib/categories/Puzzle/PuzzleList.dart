@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:riddleworld/categories/Puzzle/puzzle1@smit4297/puzzle1homescreen.dart';
 import 'package:riddleworld/universal/riddleAppbar.dart';
 
 class PuzzleList extends StatefulWidget {
@@ -15,14 +16,18 @@ class _StatePuzzleList extends State<PuzzleList> {
         child: Center(
             child: Column(
           children: [
-           ActionCard(
-                name: 'WHAT MISTAKE',
+            ActionCard(
+                name: 'PUZZLE MANIA',
                 description:
-                    '''EDIT THIS''',
+                    '''IMORT YOUR FAV PICTURE AND SOLVE IT\nby @smit4297''',
                 number: '1',
                 onPressed: () {
-                }
-                ),
+                  Navigator.push(
+                      context,
+                      new MaterialPageRoute(
+                          builder: (context) =>
+                              PuzzleHomePage(title: "PUZZLE GAME")));
+                }),
           ],
         )),
       ),
