@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:riddleworld/categories/Math/math1@jerry2501/math1HomePage.dart';
+import 'package:riddleworld/categories/Math/math2@sdmmssa/math1HomePage.dart';
 import 'package:riddleworld/universal/riddleAppbar.dart';
 
 class MathRiddles extends StatefulWidget {
@@ -20,6 +21,13 @@ class _StateMathRiddles extends State<MathRiddles> {
                 name: 'FUNNY SUBTRACTION',
                 description: 'A MATH RIDDLE THAT WILL BLOW YOUR MIND!!\nby @jerry2501',
                 number: '1',
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>Math1HomeScreen()));
+                }),
+            ActionCard(
+                name: 'AlgeNumbers',
+                description: 'A riddle that makes you think of algebra',
+                number: '2',
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>Math1HomeScreen()));
                 }),
