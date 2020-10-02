@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:riddleworld/universal/result.dart';
 import 'package:riddleworld/universal/riddleAppbar.dart';
 
-class Math2HomeScreen extends StatefulWidget {
+class Math3HomeScreen extends StatefulWidget {
   @override
-  _Math2HomeScreenState createState() => _Math2HomeScreenState();
+  _Math3HomeScreenState createState() => _Math3HomeScreenState();
 }
 
-class _Math2HomeScreenState extends State<Math2HomeScreen> {
+class _Math3HomeScreenState extends State<Math3HomeScreen> {
   int number;
   bool _isScore = false;
   int totalScore = 0;
