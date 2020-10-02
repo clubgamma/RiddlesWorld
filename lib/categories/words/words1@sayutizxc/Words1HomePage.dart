@@ -51,7 +51,7 @@ class _Words1HomePageState extends State<Words1HomePage> {
                             color: Colors.transparent),
                         width: MediaQuery.of(context).size.width * 0.9,
                         child: Text(
-                          (_count > 10) ? '00' : 'TAP THE MOON',
+                          (_count > 10) ? '00:00' : 'TAP THE MOON',
                           textAlign: TextAlign.center,
                           style: TextStyle(fontSize: 15),
                         )),
