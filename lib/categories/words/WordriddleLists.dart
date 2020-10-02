@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:riddleworld/categories/words/words1@sayutizxc/Words1HomePage.dart';
 import 'package:riddleworld/universal/riddleAppbar.dart';
 
 class WordsRiddleList extends StatefulWidget {
@@ -13,16 +14,19 @@ class _StateWordsRiddleList extends State<WordsRiddleList> {
       title: 'WORDS RIDDLE',
       body: SingleChildScrollView(
         child: Center(
-          child: Column(
-            children: [
-              ActionCard(
-                  name: 'WORD RIDDLE',
-                  description: '''EDIT THIS''',
-                  number: '1',
-                  onPressed: () {}),
-            ],
-          ),
-        ),
+            child: Column(
+          children: [
+            ActionCard(
+                name: 'FIND THE HIDDEN WORDS',
+                description:
+                    '''YOU HAVE TO FIND THE HIDDEN WORDS ON THE SCREEN''',
+                number: '1',
+                onPressed: () {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (ctx) => Words1HomePage()));
+                }),
+          ],
+        )),
       ),
     );
   }
