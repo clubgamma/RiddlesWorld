@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:riddleworld/categories/Math/math1@jerry2501/math1HomePage.dart';
+import 'package:riddleworld/categories/Math/math4@Denish-Ranpariya/math4_home_screen.dart';
 import 'package:riddleworld/universal/riddleAppbar.dart';
 
 import 'math2@Stephen-Odumirin/math2HomePage.dart';
@@ -46,6 +47,15 @@ class _StateMathRiddles extends State<MathRiddles> {
                   onPressed: () {
                     Navigator.of(context).push(
                         MaterialPageRoute(builder: (ctx) => Math3HomeScreen()));
+                  }),
+              ActionCard(
+                  name: 'GREATEST BINARY',
+                  description:
+                      'A math riddle for finding the greatest binary number!!\nby @Denish-Ranpariya',
+                  number: '4',
+                  onPressed: () {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (ctx) => Math4HomeScreen()));
                   }),
             ],
           ),
