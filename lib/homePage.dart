@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:riddleworld/categories/Game/ListOfGames.dart';
 import 'package:riddleworld/categories/Math/MathRiddlelLists.dart';
 
@@ -20,53 +21,55 @@ class _StateCategories extends State<Categories> {
         ),
         centerTitle: true,
       ),
-      body: SingleChildScrollView(
-        child: Center(
-            child: Column(
-          children: [
-            CategoryCard(
-                name: 'MATH',
-                description: '''IT'S ALL ABOUT MATHS ''',
-                number: '1',
-                onPressed: () {
-                  Navigator.pushNamed(context, '/mathPage');
-                }),
-            CategoryCard(
-                icon: Icons.group,
-                name: 'WORDS',
-                onPressed: () {
-                  Navigator.pushNamed(context, '/wordPage');
-                }),
-            CategoryCard(
-                name: 'PUZZLES',
-                onPressed: () {
-                  Navigator.pushNamed(context, '/puzzlePage');
-                }),
-            CategoryCard(
-                name: 'GAMES',
-                onPressed: () {
-                  Navigator.pushNamed(context, '/gamePage');
-                }),
-            CategoryCard(
-                name: 'WHAT SONG',
-                onPressed: () {
-                  Navigator.pushNamed(context, '/whatSongPage');
-                }),
-            CategoryCard(
-                name: 'FIND THE THINGS',
-                onPressed: () {
-                  Navigator.pushNamed(context, '/findThingPage');
-                }),
-          ],
-        )),
-      ),
+      body: GridView(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+        padding: EdgeInsets.all(5.0),
+        children: <Widget> [
+          CategoryCard(
+              name: 'MATH',
+              icon: 'assets/icons/math_icon.svg',
+              onPressed: () {
+                Navigator.pushNamed(context, '/mathPage');
+              }),
+          CategoryCard(
+              name: 'WORDS',
+              icon: 'assets/icons/words_icon.svg',
+              onPressed: () {
+                Navigator.pushNamed(context, '/wordPage');
+              }),
+          CategoryCard(
+              name: 'PUZZLES',
+              icon: 'assets/icons/puzzle_icon.svg',
+              onPressed: () {
+                Navigator.pushNamed(context, '/puzzlePage');
+              }),
+          CategoryCard(
+              name: 'GAMES',
+              icon: 'assets/icons/games_icon.svg',
+              onPressed: () {
+                Navigator.pushNamed(context, '/gamePage');
+              }),
+          CategoryCard(
+              name: 'WHAT SONG',
+              icon: 'assets/icons/music_icon.svg',
+              onPressed: () {
+                Navigator.pushNamed(context, '/whatSongPage');
+              }),
+          CategoryCard(
+              name: 'FIND \nTHE THINGS',
+              icon: 'assets/icons/things_icon.svg',
+              onPressed: () {
+                Navigator.pushNamed(context, '/findThingPage');
+              }),
+        ],
+      )
     );
   }
 }
 
 class CategoryCard extends StatelessWidget {
   final Function onPressed;
-  final IconData icon;
+  final String icon;
   final String name;
   final String number;
   final String description;
@@ -89,13 +92,26 @@ class CategoryCard extends StatelessWidget {
               decoration: BoxDecoration(
                   border: Border.all(width: 2), color: Colors.transparent),
               width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.width * 0.3,
-              child: Align(
-                  alignment: Alignment.center,
-                  child: Text(
-                    name,
-                    style: TextStyle(fontWeight: FontWeight.w600, fontSize: 18),
-                  )))),
+              height: MediaQuery.of(context).size.width * 0.5,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SvgPicture.asset(
+                    icon,
+                    height: 40.0,
+                    width: 40.0,
+                  ),
+                  SizedBox(height: 15.0,),
+                  Align(
+                    alignment: Alignment.center,
+                    child: Text(
+                      name,
+                      style: TextStyle(fontWeight: FontWeight.w600, fontSize: 18),
+                    ),
+                  ),
+                ],
+              ))),
     );
   }
 }
