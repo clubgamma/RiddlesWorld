@@ -22,7 +22,7 @@ class _Math1HomeScreenState extends State<Math1HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return RiddleBar(
-      title: 'FUNNY SUBTRACTION',
+      title: 'AlgeNumbers',
       body: _isScore
           ? Result(totalScore, 1, resetHanlder, '/mathPage')
           : Center(
@@ -43,7 +43,7 @@ class _Math1HomeScreenState extends State<Math1HomeScreen> {
                         child: Align(
                             alignment: Alignment.center,
                             child: Text(
-                              'HOW MANY TIMES CAN YOU SUBTRACT THE NUMBER 5 FROM 25?',
+                              'X is an odd number. Take an alphabet away from X and it becomes even. Which is that number?',
                               style: TextStyle(fontSize: 15),
                             ))),
                   ),
@@ -72,7 +72,7 @@ class _Math1HomeScreenState extends State<Math1HomeScreen> {
                                 top: 10.0, right: 10, left: 10),
                             child: InkWell(
                               onTap: () {
-                                if (number == 1) {
+                                if (number == 7) {
                                   setState(() {
                                     totalScore = 1;
                                     _isScore = true;
