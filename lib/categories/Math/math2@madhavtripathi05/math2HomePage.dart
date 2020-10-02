@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:riddleworld/universal/result.dart';
 import 'package:riddleworld/universal/riddleAppbar.dart';
 
-class Math1HomeScreen extends StatefulWidget {
+class Math2HomeScreen extends StatefulWidget {
   @override
-  _Math1HomeScreenState createState() => _Math1HomeScreenState();
+  _Math2HomeScreenState createState() => _Math2HomeScreenState();
 }
 
-class _Math1HomeScreenState extends State<Math1HomeScreen> {
+class _Math2HomeScreenState extends State<Math2HomeScreen> {
   int number;
   bool _isScore = false;
   int totalScore = 0;
@@ -22,9 +22,15 @@ class _Math1HomeScreenState extends State<Math1HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return RiddleBar(
-      title: 'FUNNY SUBTRACTION',
+      title: 'BRAIN TEASER',
       body: _isScore
-          ? Result(totalScore, 1, resetHandler, '/mathPage')
+          ? Result(
+              totalScore,
+              1,
+              resetHandler,
+              '/mathPage',
+              answer: 'ALL MONTHS AT-LEAST HAVE 28 DAYS! XD',
+            )
           : Center(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -35,17 +41,19 @@ class _Math1HomeScreenState extends State<Math1HomeScreen> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
-                        padding: EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                            border: Border.all(width: 1.6),
-                            color: Colors.transparent),
-                        width: MediaQuery.of(context).size.width * 0.9,
-                        child: Align(
-                            alignment: Alignment.center,
-                            child: Text(
-                              'HOW MANY TIMES CAN YOU SUBTRACT THE NUMBER 5 FROM 25?',
-                              style: TextStyle(fontSize: 15),
-                            ))),
+                      padding: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                          border: Border.all(width: 1.6),
+                          color: Colors.transparent),
+                      width: MediaQuery.of(context).size.width * 0.9,
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          'HOW MANY MONTHS IN THE YEAR HAVE 28 DAYS?',
+                          style: TextStyle(fontSize: 15),
+                        ),
+                      ),
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -72,7 +80,7 @@ class _Math1HomeScreenState extends State<Math1HomeScreen> {
                                 top: 10.0, right: 10, left: 10),
                             child: InkWell(
                               onTap: () {
-                                if (number == 1) {
+                                if (number == 12) {
                                   setState(() {
                                     totalScore = 1;
                                     _isScore = true;

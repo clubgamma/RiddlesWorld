@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:riddleworld/categories/Math/math1@jerry2501/math1HomePage.dart';
 import 'package:riddleworld/universal/riddleAppbar.dart';
 
+import 'math2@madhavtripathi05/math2HomePage.dart';
+
 class MathRiddles extends StatefulWidget {
   @override
   _StateMathRiddles createState() => _StateMathRiddles();
@@ -18,10 +20,21 @@ class _StateMathRiddles extends State<MathRiddles> {
           children: [
             ActionCard(
                 name: 'FUNNY SUBTRACTION',
-                description: 'A MATH RIDDLE THAT WILL BLOW YOUR MIND!!\nby @jerry2501',
+                description:
+                    'A MATH RIDDLE THAT WILL BLOW YOUR MIND!!\nby @jerry2501',
                 number: '1',
                 onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>Math1HomeScreen()));
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (ctx) => Math1HomeScreen()));
+                }),
+            ActionCard(
+                name: 'BRAIN TEASER',
+                description:
+                    'A MATH RIDDLE THAT WILL TAKE A MINUTE OR 2 TO FIGURE OUT!!\nby @madhavtripathi05',
+                number: '2',
+                onPressed: () {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (ctx) => Math2HomeScreen()));
                 }),
           ],
         )),
@@ -104,4 +117,3 @@ class ActionCard extends StatelessWidget {
     );
   }
 }
-
