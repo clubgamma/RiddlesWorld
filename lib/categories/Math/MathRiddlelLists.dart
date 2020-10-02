@@ -3,6 +3,7 @@ import 'package:riddleworld/categories/Math/math1@jerry2501/math1HomePage.dart';
 import 'package:riddleworld/universal/riddleAppbar.dart';
 
 import 'math2@Stephen-Odumirin/math2HomePage.dart';
+import 'math3@madhavtripathi05/math3HomePage.dart';
 
 class MathRiddles extends StatefulWidget {
   @override
@@ -37,6 +38,15 @@ class _StateMathRiddles extends State<MathRiddles> {
                       MaterialPageRoute(builder: (ctx) => Math2HomeScreen()));
                 },
               ),
+              ActionCard(
+                  name: 'BRAIN TEASER',
+                  description:
+                      'A MATH RIDDLE THAT WILL TAKE A MINUTE OR 2 TO FIGURE OUT!!\nby @madhavtripathi05',
+                  number: '3',
+                  onPressed: () {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (ctx) => Math3HomeScreen()));
+                  }),
             ],
           ),
         ),

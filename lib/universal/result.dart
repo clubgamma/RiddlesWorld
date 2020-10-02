@@ -5,8 +5,10 @@ class Result extends StatelessWidget {
   final int questions;
   final String navigationPage;
   final Function resetHandler;
+  final String answer;
 
-  Result(this.score, this.questions, this.resetHandler, this.navigationPage);
+  Result(this.score, this.questions, this.resetHandler, this.navigationPage,
+      {this.answer});
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +35,12 @@ class Result extends StatelessWidget {
                 ),
                 Text(
                   '$score out of $questions',
+                  style: TextStyle(
+                    fontSize: 22,
+                  ),
+                ),
+                Text(
+                  answer ?? ' ',
                   style: TextStyle(
                     fontSize: 22,
                   ),
