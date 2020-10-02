@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:riddleworld/categories/Math/math1@jerry2501/math1HomePage.dart';
+import 'package:riddleworld/categories/Math/math3@Denish-Ranpariya/math3_home_screen.dart';
 import 'package:riddleworld/universal/riddleAppbar.dart';
 
 class MathRiddles extends StatefulWidget {
@@ -18,10 +19,21 @@ class _StateMathRiddles extends State<MathRiddles> {
           children: [
             ActionCard(
                 name: 'FUNNY SUBTRACTION',
-                description: 'A MATH RIDDLE THAT WILL BLOW YOUR MIND!!\nby @jerry2501',
+                description:
+                    'A MATH RIDDLE THAT WILL BLOW YOUR MIND!!\nby @jerry2501',
                 number: '1',
                 onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>Math1HomeScreen()));
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (ctx) => Math1HomeScreen()));
+                }),
+            ActionCard(
+                name: 'GREATEST BINARY',
+                description:
+                    'A MATH RIDDLE TO FIND GREATEST BINARY NUMBER!!\nby @Denish-Ranpariya',
+                number: '3',
+                onPressed: () {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (ctx) => Math3HomeScreen()));
                 }),
           ],
         )),
@@ -104,4 +116,3 @@ class ActionCard extends StatelessWidget {
     );
   }
 }
-
