@@ -35,13 +35,13 @@ So why don't we create something awesome and contribute to Flutter community and
         
     > git pull upstream master
   
- ### 5. Inough BoilerPlates, It's Flutter time now!!
-  - Open cloned Project in your favourite IDE. After that go to the lib->categories. In categories choose the folder in which you want to create riddle and in that perticular Category, create
+ ### 5. Enough BoilerPlates, It's Flutter time now!!
+  - Open cloned Project in your favourite IDE. After that go to the lib->categories. In categories choose the folder in which you want to create riddle and in that particular Category, create
     one folder named **(Categoryname + currentOrderNumber + @yourUserName)** . Boom, that's your playground, create your own riddle in it! Still not got it, don't worry, here is the example.
      
      ![FolderExample](https://user-images.githubusercontent.com/57007680/94863822-afeb5200-0458-11eb-8e37-916d869b0739.png)
      
- - In that playgroung create as many files as you want, here is the [simplest file example](https://github.com/clubgamma/RiddlesWorld/blob/master/lib/categories/Math/math1%40jerry2501/math1HomePage.dart).
+ - In that playground create as many files as you want, here is the [simplest file example](https://github.com/clubgamma/RiddlesWorld/blob/master/lib/categories/Math/math1%40jerry2501/math1HomePage.dart).
  
  **Visual Example:**
  
@@ -56,7 +56,7 @@ So why don't we create something awesome and contribute to Flutter community and
    
    Use a universal AppBar throughout the application which is [here](https://github.com/clubgamma/RiddlesWorld/blob/master/lib/universal/riddleAppbar.dart).
 
- - After Creating your riddle, you have to go **MathRiddleLists.dart** file and call the **ActionCard** class which is already created. Pass the required argument like Name, discreption, orderNumber
+ - After Creating your riddle, you have to go **MathRiddleLists.dart** file and call the **ActionCard** class which is already created. Pass the required argument like Name, description, orderNumber
    etc. In OnPressed, give the className which you have created just now in your playground, I mean in your folder😉 Example below!
    
    ![FileExample](https://user-images.githubusercontent.com/57007680/94866704-76691580-045d-11eb-9859-09d56968ac46.png)
