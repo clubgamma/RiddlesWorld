@@ -40,7 +40,7 @@ class _FirstGameState extends State<FirstGame> {
       });
     } else {
       Fluttertoast.cancel();
-      
+
       Fluttertoast.showToast(
           msg: "WRONG",
           toastLength: Toast.LENGTH_SHORT,
@@ -72,7 +72,7 @@ class _FirstGameState extends State<FirstGame> {
       title: 'GUESS THE COLOR',
       body: questionCount < 5
           ? Center(
-              child: Column(
+              child: ListView(
                 children: <Widget>[
                   SizedBox(
                     height: 10,
@@ -80,7 +80,7 @@ class _FirstGameState extends State<FirstGame> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
-                      padding: EdgeInsets.all(10),
+                        padding: EdgeInsets.all(10),
                         decoration: BoxDecoration(
                             border: Border.all(width: 1.6),
                             color: Colors.transparent),
@@ -92,7 +92,6 @@ class _FirstGameState extends State<FirstGame> {
                               style: TextStyle(fontSize: 15),
                             ))),
                   ),
-                          
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
@@ -106,8 +105,10 @@ class _FirstGameState extends State<FirstGame> {
                           RGB(randomR, randomG, randomB),
                           ColorOptions(
                               randomR, randomG, randomB, answerChooseHandler),
-                              SizedBox(height: 60,)
-                        ],
+                          SizedBox(
+                            height: 60,
+                          )
+                        ], /*  */
                       ),
                     ),
                   ),
