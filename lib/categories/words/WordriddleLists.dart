@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:riddleworld/categories/words/words1@xyther14/words1HomePage.dart';
 import 'package:riddleworld/universal/riddleAppbar.dart';
 
 class WordsRiddleList extends StatefulWidget {
@@ -16,10 +17,14 @@ class _StateWordsRiddleList extends State<WordsRiddleList> {
           child: Column(
             children: [
               ActionCard(
-                  name: 'WORD RIDDLE',
-                  description: '''EDIT THIS''',
+                  name: 'Word Puzzle',
+                  description:
+                  'Play with Words\nby @xyther14',
                   number: '1',
-                  onPressed: () {}),
+                  onPressed: () {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (ctx) => Words1HomePage()));
+                  }),
             ],
           ),
         ),
