@@ -25,10 +25,9 @@ class _Math2HomeScreenState extends State<Math2HomeScreen> {
     return RiddleBar(
       title: 'FUNNY DIVISION',
       body: _isScore
-          ? Result(totalScore, 1, resetHanlder, '/mathPage')
+          ? Result(totalScore, 1, resetHanlder, '/mathPage', answer: totalScore != 1 ? "" : "Yeah! Because after that it will be 10")
           : Center(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
+              child: ListView(
                 children: <Widget>[
                   SizedBox(
                     height: 10,

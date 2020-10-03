@@ -55,7 +55,7 @@ class _StateMathRiddles extends State<MathRiddles> {
                   number: '4',
                   onPressed: () {
                     Navigator.of(context).push(
-                        MaterialPageRoute(builder: (ctx) => Math3HomeScreen()));
+                        MaterialPageRoute(builder: (ctx) => Math4HomeScreen()));
                   }),
             ],
           ),

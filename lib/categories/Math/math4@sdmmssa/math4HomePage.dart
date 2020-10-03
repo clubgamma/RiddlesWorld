@@ -24,10 +24,9 @@ class _Math4HomeScreenState extends State<Math4HomeScreen> {
     return RiddleBar(
       title: 'AlgeNumbers',
       body: _isScore
-          ? Result(totalScore, 1, resetHandler, '/mathPage')
+          ? Result(totalScore, 1, resetHandler, '/mathPage', answer: totalScore != 1 ? "" : "7 is odd but taking \'s\' away makes it even :)",)
           : Center(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
+              child: ListView(
                 children: <Widget>[
                   SizedBox(
                     height: 10,

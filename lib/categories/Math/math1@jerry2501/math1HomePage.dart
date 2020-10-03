@@ -24,10 +24,9 @@ class _Math1HomeScreenState extends State<Math1HomeScreen> {
     return RiddleBar(
       title: 'FUNNY SUBTRACTION',
       body: _isScore
-          ? Result(totalScore, 1, resetHandler, '/mathPage')
+          ? Result(totalScore, 1, resetHandler, '/mathPage', answer: totalScore != 1 ? "" : "Yo! Because after that it will be 20")
           : Center(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
+              child: ListView(
                 children: <Widget>[
                   SizedBox(
                     height: 10,

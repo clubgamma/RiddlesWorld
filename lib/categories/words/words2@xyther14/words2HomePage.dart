@@ -68,7 +68,7 @@ class _Words2HomePageState extends State<Words2HomePage> {
       title: 'WORDS PUZZLE',
       body: questionCount < 5
           ? Center(
-        child: Column(
+        child: ListView(
           children: <Widget>[
             SizedBox(
               height: 10,
