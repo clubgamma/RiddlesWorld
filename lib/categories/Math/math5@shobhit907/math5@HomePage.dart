@@ -26,8 +26,7 @@ class _Math5HomeScreenState extends State<Math5HomeScreen> {
       body: _isScore
           ? Result(totalScore, 1, resetHanlder, '/mathPage')
           : Center(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
+              child: ListView(
                 children: <Widget>[
                   SizedBox(
                     height: 10,
