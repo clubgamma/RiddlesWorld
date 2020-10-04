@@ -64,8 +64,7 @@ class _Math6HomeScreenState extends State<Math6HomeScreen> {
             title: 'GREATEST BINARY',
             body: Scaffold(
               body: SafeArea(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                child: ListView(
                   children: [
                     Padding(
                       padding: EdgeInsets.all(10.0),
