@@ -29,11 +29,10 @@ class _Math3HomeScreenState extends State<Math3HomeScreen> {
               1,
               resetHandler,
               '/mathPage',
-              answer: 'ALL MONTHS AT-LEAST HAVE 28 DAYS! XD',
+              answer: totalScore != 1 ? "" : 'ALL MONTHS AT-LEAST HAVE 28 DAYS! XD',
             )
           : Center(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
+              child: ListView(
                 children: <Widget>[
                   SizedBox(
                     height: 10,
