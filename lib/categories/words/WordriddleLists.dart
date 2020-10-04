@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:riddleworld/categories/words/words1@sayutizxc/Words1HomePage.dart';
 import 'package:riddleworld/categories/words/words2@xyther14/words2HomePage.dart';
+import 'package:riddleworld/categories/words/words3@tanharpatel/Words3HomeScreen.dart';
 import 'package:riddleworld/universal/riddleAppbar.dart';
 
 class WordsRiddleList extends StatefulWidget {
@@ -34,6 +35,15 @@ class _StateWordsRiddleList extends State<WordsRiddleList> {
                 onPressed: () {
                   Navigator.of(context).push(
                       MaterialPageRoute(builder: (ctx) => Words2HomePage()));
+                }),
+            ActionCard(
+                name: 'Find the Magical Word',
+                description:
+                'Think smart, not tough\nby @tanharpatel',
+                number: '3',
+                onPressed: () {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (ctx) => Words3HomeScreen()));
                 }),
           ],
         )),
