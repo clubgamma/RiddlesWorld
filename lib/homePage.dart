@@ -99,9 +99,8 @@ class CategoryCard extends StatelessWidget {
                 children: [
                   SvgPicture.asset(
                     icon,
-                    height: 50.0,
-                    width: 50.0,
-                    color: Colors.white,
+                    height: 40.0,
+                    width: 40.0,
                   ),
                   SizedBox(height: 15.0,),
                   Align(
