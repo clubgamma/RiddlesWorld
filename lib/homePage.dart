@@ -90,7 +90,6 @@ class CategoryCard extends StatelessWidget {
           onTap: onPressed,
           child: Container(
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30),
                   border: Border.all(width: 2), color: Colors.transparent),
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.width * 0.5,
@@ -98,20 +97,11 @@ class CategoryCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  ShaderMask(
-                    shaderCallback: (rect) => RadialGradient(
-                      colors: [
-                        Color(0xffd71e3d),
-                        Colors.black,
-                        Color(0xffd71e3d),
-                      ],
-                    ).createShader(rect),
-                    child: SvgPicture.asset(
-                      icon,
-                      height: 50.0,
-                      width: 50.0,
-                      color: Colors.white,
-                    ),
+                  SvgPicture.asset(
+                    icon,
+                    height: 50.0,
+                    width: 50.0,
+                    color: Colors.white,
                   ),
                   SizedBox(height: 15.0,),
                   Align(
