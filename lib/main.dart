@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 import 'package:riddleworld/categories/FindTheThing/FindTheThingList.dart';
 import 'package:riddleworld/categories/Game/ListOfGames.dart';
 import 'package:riddleworld/categories/Math/MathRiddlelLists.dart';
 import 'package:riddleworld/categories/Puzzle/PuzzleList.dart';
+import 'package:riddleworld/categories/Settings/SettingPage.dart';
 import 'package:riddleworld/categories/WhatSong/whatSongList.dart';
 import 'package:riddleworld/categories/words/WordriddleLists.dart';
 import 'package:riddleworld/homePage.dart';
@@ -32,7 +34,12 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return RiddleWorldHome();
+    return MultiProvider(providers: [
+      ChangeNotifierProvider<AppStateNotifier>(
+        create: (context) => AppStateNotifier(),
+        lazy: false,
+      ),
+    ], child: RiddleWorldHome());
   }
 }
 
@@ -47,19 +54,33 @@ class _RiddleWorldHomeState extends State<RiddleWorldHome> {
     return MaterialApp(
       title: 'Riddle World',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        fontFamily: RiddleWorld.google_sans_family,
-        // primarySwatch: Colors.black,
-        primaryColor: Colors.white,
-        disabledColor: Colors.grey,
-        cardColor: Colors.white,
-        canvasColor: Colors.white,
-        brightness: Brightness.light,
-        appBarTheme: AppBarTheme(
-          elevation: 0.0,
-        ),
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
+      theme: Provider.of<AppStateNotifier>(context, listen: true).isDarkMode
+          ? ThemeData(
+              fontFamily: RiddleWorld.google_sans_family,
+              // primarySwatch: Colors.black,
+              primaryColor: Colors.black,
+              disabledColor: Colors.grey,
+              cardColor: Colors.black,
+              canvasColor: Colors.black,
+              brightness: Brightness.dark,
+              appBarTheme: AppBarTheme(
+                elevation: 0.0,
+              ),
+              visualDensity: VisualDensity.adaptivePlatformDensity,
+            )
+          : ThemeData(
+              fontFamily: RiddleWorld.google_sans_family,
+              // primarySwatch: Colors.black,
+              primaryColor: Colors.white,
+              disabledColor: Colors.grey,
+              cardColor: Colors.white,
+              canvasColor: Colors.white,
+              brightness: Brightness.light,
+              appBarTheme: AppBarTheme(
+                elevation: 0.0,
+              ),
+              visualDensity: VisualDensity.adaptivePlatformDensity,
+            ),
       home: Categories(),
       routes: {
         '/gamePage': (_) => GameLists(),
@@ -69,7 +90,18 @@ class _RiddleWorldHomeState extends State<RiddleWorldHome> {
         '/puzzlePage': (_) => PuzzleList(),
         '/whatSongPage': (_) => WhatSongList(),
         '/wordPage': (_) => WordsRiddleList(),
+        '/settingPage': (_) => SettingPage(),
       },
     );
+  }
+}
+
+class AppStateNotifier extends ChangeNotifier {
+  //
+  bool isDarkMode = false;
+
+  void invertTheme() {
+    this.isDarkMode = !isDarkMode;
+    notifyListeners();
   }
 }

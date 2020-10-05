@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:riddleworld/categories/Math/math1@jerry2501/math1HomePage.dart';
 import 'package:riddleworld/categories/Math/math5@shobhit907/math5@HomePage.dart';
 import 'package:riddleworld/categories/Math/math6@Denish-Ranpariya/math6@HomePage.dart';
 import 'package:riddleworld/categories/Math/math7@MoyinShabi/math7@HomePage.dart';
+import 'package:riddleworld/main.dart';
 import 'package:riddleworld/universal/riddleAppbar.dart';
 
 import 'math2@Stephen-Odumirin/math2HomePage.dart';
@@ -118,7 +120,13 @@ class ActionCard extends StatelessWidget {
         child: Container(
           padding: EdgeInsets.all(13),
           decoration: BoxDecoration(
-              border: Border.all(width: 2), color: Colors.transparent),
+              border: Border.all(
+                  width: 2,
+                  color: Provider.of<AppStateNotifier>(context, listen: true)
+                          .isDarkMode
+                      ? Colors.white
+                      : Colors.black),
+              color: Colors.transparent),
           width: MediaQuery.of(context).size.width,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,

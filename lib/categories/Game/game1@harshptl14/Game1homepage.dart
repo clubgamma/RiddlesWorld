@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:provider/provider.dart';
 import 'package:riddleworld/universal/riddleAppbar.dart';
 import 'dart:math';
+import '../../../main.dart';
 import '../../../universal/result.dart';
 import 'colors.dart';
 import 'randomRGB.dart';
@@ -82,7 +84,13 @@ class _FirstGameState extends State<FirstGame> {
                     child: Container(
                         padding: EdgeInsets.all(10),
                         decoration: BoxDecoration(
-                            border: Border.all(width: 1.6),
+                            border: Border.all(
+                                width: 2,
+                                color: Provider.of<AppStateNotifier>(context,
+                                            listen: true)
+                                        .isDarkMode
+                                    ? Colors.white
+                                    : Colors.black),
                             color: Colors.transparent),
                         width: MediaQuery.of(context).size.width * 0.9,
                         child: Align(
@@ -98,7 +106,13 @@ class _FirstGameState extends State<FirstGame> {
                       padding: EdgeInsets.all(8),
                       width: MediaQuery.of(context).size.width * 0.9,
                       decoration: BoxDecoration(
-                          border: Border.all(width: 1.6),
+                          border: Border.all(
+                              width: 2,
+                              color: Provider.of<AppStateNotifier>(context,
+                                          listen: true)
+                                      .isDarkMode
+                                  ? Colors.white
+                                  : Colors.black),
                           color: Colors.transparent),
                       child: Column(
                         children: [

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
 import 'package:riddleworld/categories/Game/ListOfGames.dart';
 import 'package:riddleworld/categories/Math/MathRiddlelLists.dart';
+import 'package:riddleworld/main.dart';
 
 class Categories extends StatefulWidget {
   @override
@@ -20,6 +22,23 @@ class _StateCategories extends State<Categories> {
             ),
           ),
           centerTitle: true,
+          actions: [
+            Container(
+              width: 71,
+              padding: EdgeInsets.fromLTRB(7, 0, 7, 0),
+              child: InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/settingPage');
+                  },
+                  child: Icon(
+                    Icons.settings,
+                    color: Provider.of<AppStateNotifier>(context, listen: true)
+                            .isDarkMode
+                        ? Colors.white
+                        : Colors.black,
+                  )),
+            ),
+          ],
         ),
         body: GridView(
           gridDelegate:
@@ -90,7 +109,14 @@ class CategoryCard extends StatelessWidget {
           onTap: onPressed,
           child: Container(
               decoration: BoxDecoration(
-                  border: Border.all(width: 2), color: Colors.transparent),
+                  border: Border.all(
+                      width: 2,
+                      color:
+                          Provider.of<AppStateNotifier>(context, listen: true)
+                                  .isDarkMode
+                              ? Colors.white
+                              : Colors.black),
+                  color: Colors.transparent),
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.width * 0.5,
               child: Column(
@@ -101,6 +127,10 @@ class CategoryCard extends StatelessWidget {
                     icon,
                     height: 40.0,
                     width: 40.0,
+                    color: Provider.of<AppStateNotifier>(context, listen: true)
+                            .isDarkMode
+                        ? Colors.white
+                        : Colors.black,
                   ),
                   SizedBox(
                     height: 15.0,

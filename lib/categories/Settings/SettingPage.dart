@@ -1,29 +1,52 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:riddleworld/categories/Game/game1@harshptl14/Game1homepage.dart';
+import 'package:riddleworld/main.dart';
 import 'package:riddleworld/universal/riddleAppbar.dart';
 
-import '../../main.dart';
-
-class WhatSongList extends StatefulWidget {
+class SettingPage extends StatefulWidget {
   @override
-  _StateWhatSongList createState() => _StateWhatSongList();
+  _StateSettingPage createState() => _StateSettingPage();
 }
 
-class _StateWhatSongList extends State<WhatSongList> {
+class _StateSettingPage extends State<SettingPage> {
   @override
   Widget build(BuildContext context) {
     return RiddleBar(
-      title: 'WHAT SONG',
+      title: 'SETTINGS',
       body: SingleChildScrollView(
         child: Center(
             child: Column(
           children: [
-            ActionCard(
-                name: 'WHAT SONG',
-                description: '''EDIT THIS''',
-                number: '1',
-                onPressed: () {}),
+            AnimatedSwitcher(
+              duration: Duration(milliseconds: 170),
+              child: Provider.of<AppStateNotifier>(context, listen: false)
+                      .isDarkMode
+                  ? ActionCard(
+                      key: ValueKey("darkModeTrue"),
+                      name: 'TOGGLE TO LIGHT THEME',
+                      // description:
+                      //     '''YOU WILL BE GIVEN RGB COLOR CODE AND YOU HAVE TO GUESS COLOR\n by @harshptl14''',
+                      onPressed: () {
+                        Provider.of<AppStateNotifier>(context, listen: false)
+                            .invertTheme();
+                        setState(() {});
+                        // Navigator.push(context,
+                        //     new MaterialPageRoute(builder: (context) => FirstGame()));
+                      })
+                  : ActionCard(
+                      key: ValueKey("darkModeFalse"),
+                      name: 'TOGGLE TO DARK THEME',
+                      // description:
+                      //     '''YOU WILL BE GIVEN RGB COLOR CODE AND YOU HAVE TO GUESS COLOR\n by @harshptl14''',
+                      onPressed: () {
+                        Provider.of<AppStateNotifier>(context, listen: false)
+                            .invertTheme();
+                        setState(() {});
+                        // Navigator.push(context,
+                        //     new MaterialPageRoute(builder: (context) => FirstGame()));
+                      }),
+            ),
           ],
         )),
       ),
@@ -35,17 +58,15 @@ class ActionCard extends StatelessWidget {
   final Function onPressed;
   final IconData icon;
   final String name;
-  final String number;
-  final String description;
+  // final String description;
 
-  const ActionCard(
-      {Key key,
-      @required this.onPressed,
-      this.icon,
-      @required this.name,
-      @required this.number,
-      @required this.description})
-      : super(key: key);
+  const ActionCard({
+    Key key,
+    @required this.onPressed,
+    this.icon,
+    @required this.name,
+    // @required this.description
+  }) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -67,19 +88,6 @@ class ActionCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                width: 10,
-                child: Text(
-                  number,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
-                  ),
-                ),
-              ),
-              SizedBox(
-                width: 15,
-              ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -90,15 +98,6 @@ class ActionCard extends StatelessWidget {
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 17,
-                      ),
-                    ),
-                  ),
-                  Container(
-                    width: MediaQuery.of(context).size.width * 0.75,
-                    child: Text(
-                      description,
-                      style: TextStyle(
-                        fontSize: 12,
                       ),
                     ),
                   ),

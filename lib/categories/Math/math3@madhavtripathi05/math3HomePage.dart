@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:riddleworld/universal/result.dart';
 import 'package:riddleworld/universal/riddleAppbar.dart';
+
+import '../../../main.dart';
 
 class Math3HomeScreen extends StatefulWidget {
   @override
@@ -29,7 +32,8 @@ class _Math3HomeScreenState extends State<Math3HomeScreen> {
               1,
               resetHandler,
               '/mathPage',
-              answer: totalScore != 1 ? "" : 'ALL MONTHS AT-LEAST HAVE 28 DAYS! XD',
+              answer:
+                  totalScore != 1 ? "" : 'ALL MONTHS AT-LEAST HAVE 28 DAYS! XD',
             )
           : Center(
               child: ListView(
@@ -42,7 +46,13 @@ class _Math3HomeScreenState extends State<Math3HomeScreen> {
                     child: Container(
                       padding: EdgeInsets.all(10),
                       decoration: BoxDecoration(
-                          border: Border.all(width: 1.6),
+                          border: Border.all(
+                              width: 1.6,
+                              color: Provider.of<AppStateNotifier>(context,
+                                          listen: true)
+                                      .isDarkMode
+                                  ? Colors.white
+                                  : Colors.black),
                           color: Colors.transparent),
                       width: MediaQuery.of(context).size.width * 0.9,
                       child: Align(
@@ -60,7 +70,13 @@ class _Math3HomeScreenState extends State<Math3HomeScreen> {
                       padding: EdgeInsets.all(8),
                       width: MediaQuery.of(context).size.width * 0.9,
                       decoration: BoxDecoration(
-                          border: Border.all(width: 1.6),
+                          border: Border.all(
+                              width: 1.6,
+                              color: Provider.of<AppStateNotifier>(context,
+                                          listen: true)
+                                      .isDarkMode
+                                  ? Colors.white
+                                  : Colors.black),
                           color: Colors.transparent),
                       child: Column(
                         children: [
@@ -94,7 +110,14 @@ class _Math3HomeScreenState extends State<Math3HomeScreen> {
                               child: Container(
                                 padding: EdgeInsets.all(10),
                                 decoration: BoxDecoration(
-                                    border: Border.all(width: 1.6),
+                                    border: Border.all(
+                                        width: 1.6,
+                                        color: Provider.of<AppStateNotifier>(
+                                                    context,
+                                                    listen: true)
+                                                .isDarkMode
+                                            ? Colors.white
+                                            : Colors.black),
                                     color: Colors.transparent),
                                 width: MediaQuery.of(context).size.width * 0.9,
                                 child: Text(

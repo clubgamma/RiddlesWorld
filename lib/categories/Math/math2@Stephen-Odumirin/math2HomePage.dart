@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
+import '../../../main.dart';
 import '../../../universal/result.dart';
 import '../../../universal/riddleAppbar.dart';
 
@@ -25,7 +27,10 @@ class _Math2HomeScreenState extends State<Math2HomeScreen> {
     return RiddleBar(
       title: 'FUNNY DIVISION',
       body: _isScore
-          ? Result(totalScore, 1, resetHanlder, '/mathPage', answer: totalScore != 1 ? "" : "Yeah! Because after that it will be 10")
+          ? Result(totalScore, 1, resetHanlder, '/mathPage',
+              answer: totalScore != 1
+                  ? ""
+                  : "Yeah! Because after that it will be 10")
           : Center(
               child: ListView(
                 children: <Widget>[
@@ -37,7 +42,13 @@ class _Math2HomeScreenState extends State<Math2HomeScreen> {
                     child: Container(
                         padding: EdgeInsets.all(10),
                         decoration: BoxDecoration(
-                            border: Border.all(width: 1.6),
+                            border: Border.all(
+                                width: 1.6,
+                                color: Provider.of<AppStateNotifier>(context,
+                                            listen: true)
+                                        .isDarkMode
+                                    ? Colors.white
+                                    : Colors.black),
                             color: Colors.transparent),
                         width: MediaQuery.of(context).size.width * 0.9,
                         child: Align(
@@ -53,7 +64,13 @@ class _Math2HomeScreenState extends State<Math2HomeScreen> {
                       padding: EdgeInsets.all(8),
                       width: MediaQuery.of(context).size.width * 0.9,
                       decoration: BoxDecoration(
-                          border: Border.all(width: 1.6),
+                          border: Border.all(
+                              width: 1.6,
+                              color: Provider.of<AppStateNotifier>(context,
+                                          listen: true)
+                                      .isDarkMode
+                                  ? Colors.white
+                                  : Colors.black),
                           color: Colors.transparent),
                       child: Column(
                         children: [
@@ -87,7 +104,14 @@ class _Math2HomeScreenState extends State<Math2HomeScreen> {
                               child: Container(
                                 padding: EdgeInsets.all(10),
                                 decoration: BoxDecoration(
-                                    border: Border.all(width: 1.6),
+                                    border: Border.all(
+                                        width: 1.6,
+                                        color: Provider.of<AppStateNotifier>(
+                                                    context,
+                                                    listen: true)
+                                                .isDarkMode
+                                            ? Colors.white
+                                            : Colors.black),
                                     color: Colors.transparent),
                                 width: MediaQuery.of(context).size.width * 0.9,
                                 child: Text(
