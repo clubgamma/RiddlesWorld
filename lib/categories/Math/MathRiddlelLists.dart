@@ -35,7 +35,7 @@ class _StateMathRiddles extends State<MathRiddles> {
               ActionCard(
                 name: 'SIMPLE BUT TRICKY DIVISION',
                 description:
-                    'A Math riddle that might trick you if not careful \n by @Stephen-Odumirin',
+                    'A Math riddle that might trick you if not careful \nby @Stephen-Odumirin',
                 number: '2',
                 onPressed: () {
                   Navigator.of(context).push(
@@ -52,9 +52,9 @@ class _StateMathRiddles extends State<MathRiddles> {
                         MaterialPageRoute(builder: (ctx) => Math3HomeScreen()));
                   }),
               ActionCard(
-                  name: 'AlgeNumbers',
+                  name: 'ALGE NUMBERS',
                   description:
-                      'A math riddle that requires you to think about letters and numbers',
+                      'A math riddle that requires you to think about letters and numbers\nby @sdmmssa',
                   number: '4',
                   onPressed: () {
                     Navigator.of(context).push(

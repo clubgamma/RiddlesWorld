@@ -22,7 +22,7 @@ class _Math4HomeScreenState extends State<Math4HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return RiddleBar(
-      title: 'AlgeNumbers',
+      title: 'ALGE NUMBERS',
       body: _isScore
           ? Result(totalScore, 1, resetHandler, '/mathPage', answer: totalScore != 1 ? "" : "7 is odd but taking \'s\' away makes it even :)",)
           : Center(
