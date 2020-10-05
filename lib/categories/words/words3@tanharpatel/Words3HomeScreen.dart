@@ -22,7 +22,7 @@ class _Words3HomeScreenState extends State<Words3HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return RiddleBar(
-      title: 'Find The Magical Word',
+      title: 'FIND THE MAGIAL WORD',
       body: _isScore
           ? Result(totalScore, 1, resetHandler, '/wordPage', answer: totalScore == 1 ? "Bravo!! \'EMPTY\' can be mpty, mty, mt, and also \' \' 😉": "",)
           : Center(
@@ -42,7 +42,7 @@ class _Words3HomeScreenState extends State<Words3HomeScreen> {
                         child: Align(
                             alignment: Alignment.center,
                             child: Text(
-                              'Write a word which remains same also if we remove letters from whole. Also when word.length = 0',
+                              'WRITE A WORD WHICH REMAINS SAME ALSO IF WE REMOVE LETTERS FROM WHOLE. ALSO WHEN  word.length = 0',
                               style: TextStyle(fontSize: 15),
                             ))),
                   ),

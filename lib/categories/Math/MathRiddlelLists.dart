@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:riddleworld/categories/Math/math1@jerry2501/math1HomePage.dart';
 import 'package:riddleworld/categories/Math/math5@shobhit907/math5@HomePage.dart';
 import 'package:riddleworld/categories/Math/math6@Denish-Ranpariya/math6@HomePage.dart';
+import 'package:riddleworld/categories/Math/math7@MoyinShabi/math7@HomePage.dart';
 import 'package:riddleworld/universal/riddleAppbar.dart';
 
 import 'math2@Stephen-Odumirin/math2HomePage.dart';
@@ -34,7 +35,7 @@ class _StateMathRiddles extends State<MathRiddles> {
               ActionCard(
                 name: 'SIMPLE BUT TRICKY DIVISION',
                 description:
-                    'A Math riddle that might trick you if not careful \n by @Stephen-Odumirin',
+                    'A Math riddle that might trick you if not careful \nby @Stephen-Odumirin',
                 number: '2',
                 onPressed: () {
                   Navigator.of(context).push(
@@ -51,9 +52,9 @@ class _StateMathRiddles extends State<MathRiddles> {
                         MaterialPageRoute(builder: (ctx) => Math3HomeScreen()));
                   }),
               ActionCard(
-                  name: 'AlgeNumbers',
+                  name: 'ALGE NUMBERS',
                   description:
-                      'A math riddle that requires you to think about letters and numbers',
+                      'A math riddle that requires you to think about letters and numbers\nby @sdmmssa',
                   number: '4',
                   onPressed: () {
                     Navigator.of(context).push(
@@ -76,6 +77,14 @@ class _StateMathRiddles extends State<MathRiddles> {
                   onPressed: () {
                     Navigator.of(context).push(
                         MaterialPageRoute(builder: (ctx) => Math6HomeScreen()));
+                  }),
+              ActionCard(
+                  name: 'NUMBER OF TICKETS',
+                  description: 'A MATH BRAIN TEASER\nby @MoyinShabi',
+                  number: '7',
+                  onPressed: () {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (ctx) => Math7HomeScreen()));
                   }),
             ],
           ),

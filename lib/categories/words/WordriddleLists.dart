@@ -21,25 +21,25 @@ class _StateWordsRiddleList extends State<WordsRiddleList> {
             ActionCard(
                 name: 'FIND THE HIDDEN WORDS',
                 description:
-                    '''YOU HAVE TO FIND THE HIDDEN WORDS ON THE SCREEN''',
+                    '''YOU HAVE TO FIND THE HIDDEN WORDS ON THE SCREEN\nby @sayutizxc''',
                 number: '1',
                 onPressed: () {
                   Navigator.of(context).push(
                       MaterialPageRoute(builder: (ctx) => Words1HomePage()));
                 }),
             ActionCard(
-                name: 'Word Puzzle',
+                name: 'WORD PUZZLE',
                 description:
-                'Play with Words\nby @xyther14',
+                'PLAY WITH WORDS\nby @xyther14',
                 number: '2',
                 onPressed: () {
                   Navigator.of(context).push(
                       MaterialPageRoute(builder: (ctx) => Words2HomePage()));
                 }),
             ActionCard(
-                name: 'Find the Magical Word',
+                name: 'FIND THE MAGIAL WORD',
                 description:
-                'Think smart, not tough\nby @tanharpatel',
+                'THINK SMART, NOT TOUGH\nby @tanharpatel',
                 number: '3',
                 onPressed: () {
                   Navigator.of(context).push(
