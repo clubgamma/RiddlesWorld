@@ -58,12 +58,5 @@ List<ColorClass> colors = [
     color3: Color(0xFF012169),
     color4: Color(0xFFFFFFFF),
     answer: 'paypal',
-  ),
-  new ColorClass(
-    color1: Color(0xFF003087),
-    color2: Color(0xFF009cde),
-    color3: Color(0xFF012169),
-    color4: Color(0xFFFFFFFF),
-    answer: 'paypal',
   ), //paypal
 ];

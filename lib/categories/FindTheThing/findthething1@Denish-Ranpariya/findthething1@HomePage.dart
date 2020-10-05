@@ -13,7 +13,7 @@ class FindTheThing1HomeScreen extends StatefulWidget {
 }
 
 class _FindTheThing1HomeScreenState extends State<FindTheThing1HomeScreen> {
-  int index = Random().nextInt(8);
+  int index = Random().nextInt(7);
   String answer;
   bool _isScore = false;
   int totalScore = 0;
@@ -23,7 +23,7 @@ class _FindTheThing1HomeScreenState extends State<FindTheThing1HomeScreen> {
     setState(() {
       totalScore = 0;
       _isScore = false;
-      index = Random().nextInt(8);
+      index = Random().nextInt(7);
       controller.clear();
     });
   }
