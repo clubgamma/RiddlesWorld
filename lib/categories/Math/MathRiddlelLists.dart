@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:riddleworld/categories/Math/math1@jerry2501/math1HomePage.dart';
 import 'package:riddleworld/categories/Math/math5@shobhit907/math5@HomePage.dart';
 import 'package:riddleworld/categories/Math/math6@Denish-Ranpariya/math6@HomePage.dart';
+import 'package:riddleworld/categories/Math/math7@MoyinShabi/math7@HomePage.dart';
 import 'package:riddleworld/universal/riddleAppbar.dart';
 
 import 'math2@Stephen-Odumirin/math2HomePage.dart';
@@ -76,6 +77,14 @@ class _StateMathRiddles extends State<MathRiddles> {
                   onPressed: () {
                     Navigator.of(context).push(
                         MaterialPageRoute(builder: (ctx) => Math6HomeScreen()));
+                  }),
+              ActionCard(
+                  name: 'NUMBER OF TICKETS',
+                  description: 'A MATH BRAIN TEASER\nby @MoyinShabi',
+                  number: '7',
+                  onPressed: () {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (ctx) => Math7HomeScreen()));
                   }),
             ],
           ),

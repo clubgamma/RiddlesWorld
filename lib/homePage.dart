@@ -12,58 +12,58 @@ class _StateCategories extends State<Categories> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'CATEGORIES',
-          style: TextStyle(
-            fontWeight: FontWeight.w500,
+        appBar: AppBar(
+          title: Text(
+            'CATEGORIES',
+            style: TextStyle(
+              fontWeight: FontWeight.w500,
+            ),
           ),
+          centerTitle: true,
         ),
-        centerTitle: true,
-      ),
-      body: GridView(
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-        padding: EdgeInsets.all(5.0),
-        children: <Widget> [
-          CategoryCard(
-              name: 'MATH',
-              icon: 'assets/icons/math_icon.svg',
-              onPressed: () {
-                Navigator.pushNamed(context, '/mathPage');
-              }),
-          CategoryCard(
-              name: 'WORDS',
-              icon: 'assets/icons/words_icon.svg',
-              onPressed: () {
-                Navigator.pushNamed(context, '/wordPage');
-              }),
-          CategoryCard(
-              name: 'PUZZLES',
-              icon: 'assets/icons/puzzle_icon.svg',
-              onPressed: () {
-                Navigator.pushNamed(context, '/puzzlePage');
-              }),
-          CategoryCard(
-              name: 'GAMES',
-              icon: 'assets/icons/games_icon.svg',
-              onPressed: () {
-                Navigator.pushNamed(context, '/gamePage');
-              }),
-          CategoryCard(
-              name: 'WHAT SONG',
-              icon: 'assets/icons/music_icon.svg',
-              onPressed: () {
-                Navigator.pushNamed(context, '/whatSongPage');
-              }),
-          CategoryCard(
-              name: 'FIND \nTHE THINGS',
-              icon: 'assets/icons/things_icon.svg',
-              onPressed: () {
-                Navigator.pushNamed(context, '/findThingPage');
-              }),
-        ],
-      )
-    );
+        body: GridView(
+          gridDelegate:
+              SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+          padding: EdgeInsets.all(5.0),
+          children: <Widget>[
+            CategoryCard(
+                name: 'MATH',
+                icon: 'assets/icons/math_icon.svg',
+                onPressed: () {
+                  Navigator.pushNamed(context, '/mathPage');
+                }),
+            CategoryCard(
+                name: 'WORDS',
+                icon: 'assets/icons/words_icon.svg',
+                onPressed: () {
+                  Navigator.pushNamed(context, '/wordPage');
+                }),
+            CategoryCard(
+                name: 'PUZZLES',
+                icon: 'assets/icons/puzzle_icon.svg',
+                onPressed: () {
+                  Navigator.pushNamed(context, '/puzzlePage');
+                }),
+            CategoryCard(
+                name: 'GAMES',
+                icon: 'assets/icons/games_icon.svg',
+                onPressed: () {
+                  Navigator.pushNamed(context, '/gamePage');
+                }),
+            CategoryCard(
+                name: 'WHAT SONG',
+                icon: 'assets/icons/music_icon.svg',
+                onPressed: () {
+                  Navigator.pushNamed(context, '/whatSongPage');
+                }),
+            CategoryCard(
+                name: 'FIND \nTHE THINGS',
+                icon: 'assets/icons/things_icon.svg',
+                onPressed: () {
+                  Navigator.pushNamed(context, '/findThingPage');
+                }),
+          ],
+        ));
   }
 }
 
@@ -102,12 +102,15 @@ class CategoryCard extends StatelessWidget {
                     height: 40.0,
                     width: 40.0,
                   ),
-                  SizedBox(height: 15.0,),
+                  SizedBox(
+                    height: 15.0,
+                  ),
                   Align(
                     alignment: Alignment.center,
                     child: Text(
                       name,
-                      style: TextStyle(fontWeight: FontWeight.w600, fontSize: 18),
+                      style:
+                          TextStyle(fontWeight: FontWeight.w600, fontSize: 18),
                     ),
                   ),
                 ],
