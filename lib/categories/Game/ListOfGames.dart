@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:riddleworld/categories/Game/game1@harshptl14/Game1homepage.dart';
+import 'package:riddleworld/categories/Game/game2@tanharpatel/Games2HomeScreen.dart';
 import 'package:riddleworld/universal/riddleAppbar.dart';
 
 class GameLists extends StatefulWidget {
@@ -24,6 +25,16 @@ class _StateGameLists extends State<GameLists> {
                 onPressed: () {
                   Navigator.push(context,
                       new MaterialPageRoute(builder: (context) => FirstGame()));
+                }
+                ),
+            ActionCard(
+                name: 'Hellooooo',
+                description:
+                    '''OCTOCAT WELCOMES YOU...\n by @tanharpatel''',
+                number: '2',
+                onPressed: () {
+                  Navigator.push(context,
+                      new MaterialPageRoute(builder: (context) => Games2HomeScreen()));
                 }
                 ),
           ],
