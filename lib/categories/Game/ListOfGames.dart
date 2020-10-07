@@ -20,7 +20,7 @@ class _StateGameLists extends State<GameLists> {
             ActionCard(
                 name: 'GUESS THE COLOR',
                 description:
-                    '''YOU WILL BE GIVEN RGB COLOR CODE AND YOU HAVE TO GUESS COLOR\n by @harshptl14''',
+                    '''YOU WILL BE GIVEN RGB COLOR CODE AND YOU HAVE TO GUESS COLOR\nby @harshptl14''',
                 number: '1',
                 onPressed: () {
                   Navigator.push(context,
@@ -28,9 +28,9 @@ class _StateGameLists extends State<GameLists> {
                 }
                 ),
             ActionCard(
-                name: 'Hellooooo',
+                name: 'HELLOOOOO',
                 description:
-                    '''OCTOCAT WELCOMES YOU...\n by @tanharpatel''',
+                    '''OCTOCAT WELCOMES YOU...\nby @tanharpatel''',
                 number: '2',
                 onPressed: () {
                   Navigator.push(context,
