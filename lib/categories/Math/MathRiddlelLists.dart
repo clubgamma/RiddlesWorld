@@ -95,6 +95,14 @@ class _StateMathRiddles extends State<MathRiddles> {
                     Navigator.of(context).push(
                         MaterialPageRoute(builder: (ctx) => Math8HomeScreen()));
                   }),
+              ActionCard(
+                  name: 'WRONG BUT RIGHT',
+                  description: 'THINK A LITTLE OUT OF THE BOX FOR THIS ONE\nby @razorcalhn',
+                  number: '9',
+                  onPressed: () {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (ctx) => Math9HomeScreen()));
+                  }),
             ],
           ),
         ),
