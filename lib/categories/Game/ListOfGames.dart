@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:riddleworld/categories/Game/game1@harshptl14/Game1homepage.dart';
+import 'package:riddleworld/categories/Game/game2@tanharpatel/Games2HomeScreen.dart';
 import 'package:riddleworld/universal/riddleAppbar.dart';
 
 class GameLists extends StatefulWidget {
@@ -19,11 +20,21 @@ class _StateGameLists extends State<GameLists> {
             ActionCard(
                 name: 'GUESS THE COLOR',
                 description:
-                    '''YOU WILL BE GIVEN RGB COLOR CODE AND YOU HAVE TO GUESS COLOR\n by @harshptl14''',
+                    '''YOU WILL BE GIVEN RGB COLOR CODE AND YOU HAVE TO GUESS COLOR\nby @harshptl14''',
                 number: '1',
                 onPressed: () {
                   Navigator.push(context,
                       new MaterialPageRoute(builder: (context) => FirstGame()));
+                }
+                ),
+            ActionCard(
+                name: 'HELLOOOOO',
+                description:
+                    '''OCTOCAT WELCOMES YOU...\nby @tanharpatel''',
+                number: '2',
+                onPressed: () {
+                  Navigator.push(context,
+                      new MaterialPageRoute(builder: (context) => Games2HomeScreen()));
                 }
                 ),
           ],
