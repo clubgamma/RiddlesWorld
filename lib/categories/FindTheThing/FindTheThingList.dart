@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:riddleworld/categories/FindTheThing/findthething1@Denish-Ranpariya/findthething1@HomePage.dart';
 import 'package:riddleworld/universal/riddleAppbar.dart';
 
 class FindTheThingList extends StatefulWidget {
@@ -16,13 +17,15 @@ class _StateFindTheThingList extends State<FindTheThingList> {
             child: Column(
           children: [
             ActionCard(
-                name: 'WHAT THING',
-                description:
-                    '''EDIT THIS''',
-                number: '1',
-                onPressed: () {
-                }
-                ),
+              name: 'GUESS THE NAME!!',
+              description:
+                  'GUESS THE NAME OF COMPANY/BRAND USING GIVEN COLORS.\nby @Denish-Ranpariya',
+              number: '1',
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (ctx) => FindTheThing1HomeScreen()));
+              },
+            ),
           ],
         )),
       ),
