@@ -22,11 +22,12 @@ class _Math11HomeScreenState extends State<Math11HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return RiddleBar(
-      title: 'Math in a Family',
+      title: 'Card Skills',
       body: _isScore
           ? Result(totalScore, 1, resetHandler, '/mathPage',
-              answer:
-                  totalScore != 1 ? "" : "Yo! Because after that it will be 20")
+              answer: totalScore != 1
+                  ? "Wrong answer! Chin up, better luck next time!"
+                  : "Amazing!!! You got it right!!!")
           : Center(
               child: ListView(
                 children: <Widget>[
@@ -44,7 +45,7 @@ class _Math11HomeScreenState extends State<Math11HomeScreen> {
                         child: Align(
                             alignment: Alignment.center,
                             child: Text(
-                              'A grandfather, two fathers and two sons went to the movie theater together and everyone bought one movie ticket each. How many tickets did they buy in total?',
+                              'A small number of cards has been lost from a complete pack. If I deal among four people, three cards remain. If I deal among three people, two remain and if I deal among five people, two cards remain. How many cards are there?',
                               style: TextStyle(fontSize: 15),
                             ))),
                   ),
@@ -73,7 +74,7 @@ class _Math11HomeScreenState extends State<Math11HomeScreen> {
                                 top: 10.0, right: 10, left: 10),
                             child: InkWell(
                               onTap: () {
-                                if (number == 3) {
+                                if (number == 47) {
                                   setState(() {
                                     totalScore = 1;
                                     _isScore = true;

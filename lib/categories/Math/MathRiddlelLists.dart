@@ -116,9 +116,9 @@ class _StateMathRiddles extends State<MathRiddles> {
                         builder: (ctx) => Math10HomeScreen()));
                   }),
               ActionCard(
-                  name: 'Math in a Family',
+                  name: 'Card Skills',
                   description:
-                      'A math riddle with a twist of family relation by @mayankparida',
+                      'A math riddle based on the card deck by @mayankparida',
                   number: '11',
                   onPressed: () {
                     Navigator.of(context).push(MaterialPageRoute(
