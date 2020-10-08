@@ -10,6 +10,7 @@ import 'math10@bibekpanda55/math10HomePage.dart';
 import 'math2@Stephen-Odumirin/math2HomePage.dart';
 import 'math3@madhavtripathi05/math3HomePage.dart';
 import 'math4@sdmmssa/math4HomePage.dart';
+import 'math11@mayankparida/math11HomePage.dart';
 
 class MathRiddles extends StatefulWidget {
   @override
@@ -113,6 +114,15 @@ class _StateMathRiddles extends State<MathRiddles> {
                   onPressed: () {
                     Navigator.of(context).push(MaterialPageRoute(
                         builder: (ctx) => Math10HomeScreen()));
+                  }),
+              ActionCard(
+                  name: 'Math in a Family',
+                  description:
+                      'A math riddle with a twist of family relation by @mayankparida',
+                  number: '11',
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (ctx) => Math11HomeScreen()));
                   }),
             ],
           ),
