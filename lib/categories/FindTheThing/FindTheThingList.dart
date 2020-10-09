@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:riddleworld/categories/FindTheThing/findthething1@Denish-Ranpariya/findthething1@HomePage.dart';
+import 'package:riddleworld/categories/FindTheThing/findthething2@Denish-Ranpariya/findthething2@HomePage.dart';
 import 'package:riddleworld/universal/riddleAppbar.dart';
 
 class FindTheThingList extends StatefulWidget {
@@ -24,6 +25,16 @@ class _StateFindTheThingList extends State<FindTheThingList> {
               onPressed: () {
                 Navigator.of(context).push(MaterialPageRoute(
                     builder: (ctx) => FindTheThing1HomeScreen()));
+              },
+            ),
+            ActionCard(
+              name: 'FIND THE ODD ONE!!',
+              description:
+                  'FIND THE THING THAT IS DIFFERENT FROM OTHERS.\nby @Denish-Ranpariya',
+              number: '2',
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (ctx) => FindTheThing2HomeScreen()));
               },
             ),
           ],
