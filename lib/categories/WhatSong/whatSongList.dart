@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:riddleworld/categories/Game/game1@harshptl14/Game1homepage.dart';
+import 'package:riddleworld/categories/WhatSong/WhatSong1@maplerichie/WhatSong1HomePage.dart';
 import 'package:riddleworld/universal/riddleAppbar.dart';
 
 class WhatSongList extends StatefulWidget {
@@ -17,13 +17,12 @@ class _StateWhatSongList extends State<WhatSongList> {
             child: Column(
           children: [
             ActionCard(
-                name: 'WHAT SONG',
-                description:
-                    '''EDIT THIS''',
+                name: 'GUESS IT!',
+                description: '''Nice lyrics make a song beautiful\nby @maplerichie''',
                 number: '1',
                 onPressed: () {
-                }
-                ),
+                  Navigator.of(context).push(MaterialPageRoute(builder: (ctx) => WhatSong1HomePage()));
+                }),
           ],
         )),
       ),
@@ -38,13 +37,7 @@ class ActionCard extends StatelessWidget {
   final String number;
   final String description;
 
-  const ActionCard(
-      {Key key,
-      @required this.onPressed,
-      this.icon,
-      @required this.name,
-      @required this.number,
-      @required this.description})
+  const ActionCard({Key key, @required this.onPressed, this.icon, @required this.name, @required this.number, @required this.description})
       : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -54,8 +47,7 @@ class ActionCard extends StatelessWidget {
         onTap: onPressed,
         child: Container(
           padding: EdgeInsets.all(13),
-          decoration: BoxDecoration(
-              border: Border.all(width: 2), color: Colors.transparent),
+          decoration: BoxDecoration(border: Border.all(width: 2), color: Colors.transparent),
           width: MediaQuery.of(context).size.width,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
