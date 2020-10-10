@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:riddleworld/categories/Game/ListOfGames.dart';
-import 'package:riddleworld/categories/Math/MathRiddlelLists.dart';
 
 class Categories extends StatefulWidget {
   @override
@@ -9,61 +8,94 @@ class Categories extends StatefulWidget {
 }
 
 class _StateCategories extends State<Categories> {
+  List<Widget> _listItems = <Widget>[];
+
+  @override
+  void initState() {
+    super.initState();
+
+    _loadCards();
+  }
+
+  void _loadCards() {
+    List<CategoryCard> cardList = [
+      CategoryCard(
+          name: 'MATH',
+          icon: 'assets/icons/math_icon.svg',
+          onPressed: () {
+            Navigator.pushNamed(context, '/mathPage');
+          }),
+      CategoryCard(
+          name: 'WORDS',
+          icon: 'assets/icons/words_icon.svg',
+          onPressed: () {
+            Navigator.pushNamed(context, '/wordPage');
+          }),
+      CategoryCard(
+          name: 'PUZZLES',
+          icon: 'assets/icons/puzzle_icon.svg',
+          onPressed: () {
+            Navigator.pushNamed(context, '/puzzlePage');
+          }),
+      CategoryCard(
+          name: 'GAMES',
+          icon: 'assets/icons/games_icon.svg',
+          onPressed: () {
+            Navigator.pushNamed(context, '/gamePage');
+          }),
+      CategoryCard(
+          name: 'WHAT SONG',
+          icon: 'assets/icons/music_icon.svg',
+          onPressed: () {
+            Navigator.pushNamed(context, '/whatSongPage');
+          }),
+      CategoryCard(
+          name: 'FIND \nTHE THINGS',
+          icon: 'assets/icons/things_icon.svg',
+          onPressed: () {
+            Navigator.pushNamed(context, '/findThingPage');
+          }),
+    ];
+
+    for (int i = 0; i < cardList.length; i++) {
+      _listItems.add(cardList[i]);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
+    int columnCount = 2;
     return Scaffold(
-        appBar: AppBar(
-          title: Text(
-            'CATEGORIES',
-            style: TextStyle(
-              fontWeight: FontWeight.w500,
-            ),
+      appBar: AppBar(
+        title: Text(
+          'CATEGORIES',
+          style: TextStyle(
+            fontWeight: FontWeight.w500,
           ),
-          centerTitle: true,
         ),
-        body: GridView(
-          gridDelegate:
-              SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-          padding: EdgeInsets.all(5.0),
-          children: <Widget>[
-            CategoryCard(
-                name: 'MATH',
-                icon: 'assets/icons/math_icon.svg',
-                onPressed: () {
-                  Navigator.pushNamed(context, '/mathPage');
-                }),
-            CategoryCard(
-                name: 'WORDS',
-                icon: 'assets/icons/words_icon.svg',
-                onPressed: () {
-                  Navigator.pushNamed(context, '/wordPage');
-                }),
-            CategoryCard(
-                name: 'PUZZLES',
-                icon: 'assets/icons/puzzle_icon.svg',
-                onPressed: () {
-                  Navigator.pushNamed(context, '/puzzlePage');
-                }),
-            CategoryCard(
-                name: 'GAMES',
-                icon: 'assets/icons/games_icon.svg',
-                onPressed: () {
-                  Navigator.pushNamed(context, '/gamePage');
-                }),
-            CategoryCard(
-                name: 'WHAT SONG',
-                icon: 'assets/icons/music_icon.svg',
-                onPressed: () {
-                  Navigator.pushNamed(context, '/whatSongPage');
-                }),
-            CategoryCard(
-                name: 'FIND \nTHE THINGS',
-                icon: 'assets/icons/things_icon.svg',
-                onPressed: () {
-                  Navigator.pushNamed(context, '/findThingPage');
-                }),
-          ],
-        ));
+        centerTitle: true,
+      ),
+      body: AnimationLimiter(
+        child: GridView.count(
+          crossAxisCount: columnCount,
+          children: List.generate(
+            6,
+            (int index) {
+              return AnimationConfiguration.staggeredGrid(
+                position: index,
+                duration: const Duration(milliseconds: 1000),
+                columnCount: columnCount,
+                child: ScaleAnimation(
+                  child: FadeInAnimation(
+                    child: _listItems[index],
+                  ),
+                ),
+              );
+            },
+          ),
+        ),
+      ),
+    );
   }
 }
 
