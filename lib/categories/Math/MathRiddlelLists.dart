@@ -126,7 +126,7 @@ class _StateMathRiddles extends State<MathRiddles> {
                         builder: (ctx) => Math11HomeScreen()));
                   }),
               ActionCard(
-                  name: 'Card Skills',
+                  name: 'Time Tricks',
                   description:
                       'A math riddle based on the time by @AdityaLalwani',
                   number: '13',
