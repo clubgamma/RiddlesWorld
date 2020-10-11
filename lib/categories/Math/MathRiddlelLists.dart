@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+
+import 'package:riddleworld/categories/Math/math13@AdityaLalwani/math13HomePage.dart';
+
 import 'package:riddleworld/categories/Math/math12@Test-User-0123/math12HomePage.dart';
+
 import 'package:riddleworld/categories/Math/math1@jerry2501/math1HomePage.dart';
 import 'package:riddleworld/categories/Math/math5@shobhit907/math5@HomePage.dart';
 import 'package:riddleworld/categories/Math/math6@Denish-Ranpariya/math6@HomePage.dart';
@@ -126,6 +130,16 @@ class _StateMathRiddles extends State<MathRiddles> {
                         builder: (ctx) => Math11HomeScreen()));
                   }),
 
+              ActionCard(
+                  name: 'Time Tricks',
+                  description:
+                      'A math riddle based on the time by @AdityaLalwani',
+                  number: '13',
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (ctx) => Math13HomeScreen()));
+}),
+
                   ActionCard(
                   name: 'SEARCHING FOR THE SYMBOL',
                   description:
@@ -134,6 +148,7 @@ class _StateMathRiddles extends State<MathRiddles> {
                   onPressed: () {
                     Navigator.of(context).push(MaterialPageRoute(
                         builder: (ctx) => Math12HomeScreen()));
+
                   }),
             ],
           ),
