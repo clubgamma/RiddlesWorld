@@ -20,41 +20,47 @@ class _StateCategories extends State<Categories> {
   void _loadCards() {
     List<CategoryCard> cardList = [
       CategoryCard(
-          name: 'MATH',
-          icon: 'assets/icons/math_icon.svg',
-          onPressed: () {
-            Navigator.pushNamed(context, '/mathPage');
-          }),
+        name: 'MATH',
+        icon: 'assets/icons/math_icon.svg',
+        onPressed: () {
+          Navigator.pushNamed(context, '/mathPage');
+        },
+      ),
       CategoryCard(
-          name: 'WORDS',
-          icon: 'assets/icons/words_icon.svg',
-          onPressed: () {
-            Navigator.pushNamed(context, '/wordPage');
-          }),
+        name: 'WORDS',
+        icon: 'assets/icons/words_icon.svg',
+        onPressed: () {
+          Navigator.pushNamed(context, '/wordPage');
+        },
+      ),
       CategoryCard(
-          name: 'PUZZLES',
-          icon: 'assets/icons/puzzle_icon.svg',
-          onPressed: () {
-            Navigator.pushNamed(context, '/puzzlePage');
-          }),
+        name: 'PUZZLES',
+        icon: 'assets/icons/puzzle_icon.svg',
+        onPressed: () {
+          Navigator.pushNamed(context, '/puzzlePage');
+        },
+      ),
       CategoryCard(
-          name: 'GAMES',
-          icon: 'assets/icons/games_icon.svg',
-          onPressed: () {
-            Navigator.pushNamed(context, '/gamePage');
-          }),
+        name: 'GAMES',
+        icon: 'assets/icons/games_icon.svg',
+        onPressed: () {
+          Navigator.pushNamed(context, '/gamePage');
+        },
+      ),
       CategoryCard(
-          name: 'WHAT SONG',
-          icon: 'assets/icons/music_icon.svg',
-          onPressed: () {
-            Navigator.pushNamed(context, '/whatSongPage');
-          }),
+        name: 'WHAT SONG',
+        icon: 'assets/icons/music_icon.svg',
+        onPressed: () {
+          Navigator.pushNamed(context, '/whatSongPage');
+        },
+      ),
       CategoryCard(
-          name: 'FIND \nTHE THINGS',
-          icon: 'assets/icons/things_icon.svg',
-          onPressed: () {
-            Navigator.pushNamed(context, '/findThingPage');
-          }),
+        name: 'FIND \nTHE THINGS',
+        icon: 'assets/icons/things_icon.svg',
+        onPressed: () {
+          Navigator.pushNamed(context, '/findThingPage');
+        },
+      ),
     ];
 
     for (int i = 0; i < cardList.length; i++) {
