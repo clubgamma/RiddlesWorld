@@ -79,7 +79,7 @@ class _StateCategories extends State<Categories> {
         child: GridView.count(
           crossAxisCount: columnCount,
           children: List.generate(
-            6,
+            _listItems.length,
             (int index) {
               return AnimationConfiguration.staggeredGrid(
                 position: index,
