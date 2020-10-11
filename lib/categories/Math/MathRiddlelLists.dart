@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
+import 'package:riddleworld/categories/Math/math13@AdityaLalwani/math13HomePage.dart';
+import 'package:riddleworld/categories/Math/math12@Test-User-0123/math12HomePage.dart';
 import 'package:riddleworld/categories/Math/math1@jerry2501/math1HomePage.dart';
 import 'package:riddleworld/categories/Math/math5@shobhit907/math5@HomePage.dart';
 import 'package:riddleworld/categories/Math/math6@Denish-Ranpariya/math6@HomePage.dart';
@@ -190,12 +192,14 @@ class ActionCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                width: 10,
-                child: Text(
-                  number,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
+                width: 20,
+                child: Center(
+                  child: Text(
+                    number,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                    ),
                   ),
                 ),
               ),
