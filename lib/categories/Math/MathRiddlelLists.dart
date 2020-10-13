@@ -6,6 +6,8 @@ import 'package:riddleworld/categories/Math/math6@Denish-Ranpariya/math6@HomePag
 import 'package:riddleworld/categories/Math/math7@MoyinShabi/math7@HomePage.dart';
 import 'package:riddleworld/categories/Math/math8@c0decreat0r/math8HomePage.dart';
 import 'package:riddleworld/universal/riddleAppbar.dart';
+import 'math12@Test-User-0123/math12HomePage.dart';
+import 'math13@AdityaLalwani/math13HomePage.dart';
 import 'math9@razorcalhn/math9HomePage.dart';
 import 'math10@bibekpanda55/math10HomePage.dart';
 import 'math2@Stephen-Odumirin/math2HomePage.dart';
@@ -136,6 +138,22 @@ class _StateMathRiddles extends State<MathRiddles> {
               .push(MaterialPageRoute(builder: (ctx) => Math11HomeScreen()));
         },
       ),
+      ActionCard(
+          name: 'SEARCHING FOR THE SYMBOL',
+          description: 'A math riddle based on the symbols @Test-User-0123',
+          number: '12',
+          onPressed: () {
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (ctx) => Math12HomeScreen()));
+          }),
+      ActionCard(
+          name: 'Time Tricks',
+          description: 'A math riddle based on the time by @AdityaLalwani',
+          number: '13',
+          onPressed: () {
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (ctx) => Math13HomeScreen()));
+          }),
     ];
 
     for (int i = 0; i < cardList.length; i++) {
