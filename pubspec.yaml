@@ -18,7 +18,7 @@ dependencies:
   just_audio:
   animated_widgets:
   flutter_staggered_animations: ^0.1.2
-
+  assets_audio_player: ^2.0.10
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -34,7 +34,7 @@ flutter:
     - assets/icons/words_icon.svg
     - assets/icons/puzzle_icon.svg
     - assets/icons/math_icon.svg
-
+    - assets/audios/
   fonts:
     - family: GoogleSans
       fonts:

@@ -14,6 +14,7 @@ import 'math2@Stephen-Odumirin/math2HomePage.dart';
 import 'math3@madhavtripathi05/math3HomePage.dart';
 import 'math4@sdmmssa/math4HomePage.dart';
 import 'math11@mayankparida/math11HomePage.dart';
+import 'package:assets_audio_player/assets_audio_player.dart';
 
 class MathRiddles extends StatefulWidget {
   @override
@@ -37,6 +38,7 @@ class _StateMathRiddles extends State<MathRiddles> {
         description: 'A MATH RIDDLE THAT WILL BLOW YOUR MIND!!\nby @jerry2501',
         number: '1',
         onPressed: () {
+          onPlayAudio();
           Navigator.of(context)
               .push(MaterialPageRoute(builder: (ctx) => Math1HomeScreen()));
         },
@@ -47,6 +49,7 @@ class _StateMathRiddles extends State<MathRiddles> {
             'A Math riddle that might trick you if not careful \nby @Stephen-Odumirin',
         number: '2',
         onPressed: () {
+          onPlayAudio();
           Navigator.of(context)
               .push(MaterialPageRoute(builder: (ctx) => Math2HomeScreen()));
         },
@@ -57,6 +60,7 @@ class _StateMathRiddles extends State<MathRiddles> {
             'A MATH RIDDLE THAT WILL TAKE A MINUTE OR 2 TO FIGURE OUT!!\nby @madhavtripathi05',
         number: '3',
         onPressed: () {
+          onPlayAudio();
           Navigator.of(context)
               .push(MaterialPageRoute(builder: (ctx) => Math3HomeScreen()));
         },
@@ -67,6 +71,7 @@ class _StateMathRiddles extends State<MathRiddles> {
             'A math riddle that requires you to think about letters and numbers\nby @sdmmssa',
         number: '4',
         onPressed: () {
+          onPlayAudio();
           Navigator.of(context)
               .push(MaterialPageRoute(builder: (ctx) => Math4HomeScreen()));
         },
@@ -77,6 +82,7 @@ class _StateMathRiddles extends State<MathRiddles> {
             'A MATH RIDDLE TO WHICH OBSERVATION GIVES THE COUNT\nby @shobhit907',
         number: '5',
         onPressed: () {
+          onPlayAudio();
           Navigator.of(context)
               .push(MaterialPageRoute(builder: (ctx) => Math5HomeScreen()));
         },
@@ -87,6 +93,7 @@ class _StateMathRiddles extends State<MathRiddles> {
             'A MATH RIDDLE TO FIND GREATEST BINARY NUMBER\nby @Denish-Ranpariya',
         number: '6',
         onPressed: () {
+          onPlayAudio();
           Navigator.of(context)
               .push(MaterialPageRoute(builder: (ctx) => Math6HomeScreen()));
         },
@@ -96,6 +103,7 @@ class _StateMathRiddles extends State<MathRiddles> {
         description: 'A MATH BRAIN TEASER\nby @MoyinShabi',
         number: '7',
         onPressed: () {
+          onPlayAudio();
           Navigator.of(context)
               .push(MaterialPageRoute(builder: (ctx) => Math7HomeScreen()));
         },
@@ -105,6 +113,7 @@ class _StateMathRiddles extends State<MathRiddles> {
         description: 'Odd Even conversion\nby @c0decreat0r',
         number: '8',
         onPressed: () {
+          onPlayAudio();
           Navigator.of(context)
               .push(MaterialPageRoute(builder: (ctx) => Math8HomeScreen()));
         },
@@ -115,6 +124,7 @@ class _StateMathRiddles extends State<MathRiddles> {
             'THINK A LITTLE OUT OF THE BOX FOR THIS ONE\nby @razorcalhn',
         number: '9',
         onPressed: () {
+          onPlayAudio();
           Navigator.of(context)
               .push(MaterialPageRoute(builder: (ctx) => Math9HomeScreen()));
         },
@@ -125,6 +135,7 @@ class _StateMathRiddles extends State<MathRiddles> {
             'A math riddle which is very fun to try out by @bibekpanda55',
         number: '10',
         onPressed: () {
+          onPlayAudio();
           Navigator.of(context)
               .push(MaterialPageRoute(builder: (ctx) => Math10HomeScreen()));
         },
@@ -134,6 +145,7 @@ class _StateMathRiddles extends State<MathRiddles> {
         description: 'A math riddle based on the card deck by @mayankparida',
         number: '11',
         onPressed: () {
+          onPlayAudio();
           Navigator.of(context)
               .push(MaterialPageRoute(builder: (ctx) => Math11HomeScreen()));
         },
@@ -143,6 +155,7 @@ class _StateMathRiddles extends State<MathRiddles> {
           description: 'A math riddle based on the symbols @Test-User-0123',
           number: '12',
           onPressed: () {
+            onPlayAudio();
             Navigator.of(context)
                 .push(MaterialPageRoute(builder: (ctx) => Math12HomeScreen()));
           }),
@@ -151,6 +164,7 @@ class _StateMathRiddles extends State<MathRiddles> {
           description: 'A math riddle based on the time by @AdityaLalwani',
           number: '13',
           onPressed: () {
+            onPlayAudio();
             Navigator.of(context)
                 .push(MaterialPageRoute(builder: (ctx) => Math13HomeScreen()));
           }),
@@ -182,6 +196,13 @@ class _StateMathRiddles extends State<MathRiddles> {
           },
         ),
       ),
+    );
+  }
+
+  void onPlayAudio() async {
+    AssetsAudioPlayer assetsAudioPlayer = AssetsAudioPlayer();
+    assetsAudioPlayer.open(
+      Audio('assets/audios/click.mp3'),
     );
   }
 }
