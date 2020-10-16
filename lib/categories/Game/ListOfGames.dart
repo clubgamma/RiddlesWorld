@@ -3,6 +3,7 @@ import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:riddleworld/categories/Game/game1@harshptl14/Game1homepage.dart';
 import 'package:riddleworld/categories/Game/game2@tanharpatel/Games2HomeScreen.dart';
 import 'package:riddleworld/universal/riddleAppbar.dart';
+import 'package:assets_audio_player/assets_audio_player.dart';
 
 class GameLists extends StatefulWidget {
   @override
@@ -27,6 +28,7 @@ class _StateGameLists extends State<GameLists> {
             '''YOU WILL BE GIVEN RGB COLOR CODE AND YOU HAVE TO GUESS COLOR\nby @harshptl14''',
         number: '1',
         onPressed: () {
+          onPlayAudio();
           Navigator.push(context,
               new MaterialPageRoute(builder: (context) => FirstGame()));
         },
@@ -36,6 +38,7 @@ class _StateGameLists extends State<GameLists> {
         description: '''OCTOCAT WELCOMES YOU...\nby @tanharpatel''',
         number: '2',
         onPressed: () {
+          onPlayAudio();
           Navigator.push(context,
               new MaterialPageRoute(builder: (context) => Games2HomeScreen()));
         },
@@ -45,6 +48,13 @@ class _StateGameLists extends State<GameLists> {
     for (int i = 0; i < cardList.length; i++) {
       _listItems.add(cardList[i]);
     }
+  }
+
+  void onPlayAudio() async {
+    AssetsAudioPlayer assetsAudioPlayer = AssetsAudioPlayer();
+    assetsAudioPlayer.open(
+      Audio('assets/audios/click.mp3'),
+    );
   }
 
   @override

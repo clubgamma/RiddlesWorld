@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:riddleworld/categories/WhatSong/WhatSong1@maplerichie/WhatSong1HomePage.dart';
 import 'package:riddleworld/universal/riddleAppbar.dart';
+import 'package:assets_audio_player/assets_audio_player.dart';
 
 class WhatSongList extends StatefulWidget {
   @override
@@ -25,7 +26,9 @@ class _StateWhatSongList extends State<WhatSongList> {
         description: '''Nice lyrics make a song beautiful\nby @maplerichie''',
         number: '1',
         onPressed: () {
-          Navigator.of(context).push(MaterialPageRoute(builder: (ctx) => WhatSong1HomePage()));
+          onPlayAudio();
+          Navigator.of(context)
+              .push(MaterialPageRoute(builder: (ctx) => WhatSong1HomePage()));
         },
       ),
     ];
@@ -33,6 +36,13 @@ class _StateWhatSongList extends State<WhatSongList> {
     for (int i = 0; i < cardList.length; i++) {
       _listItems.add(cardList[i]);
     }
+  }
+
+  void onPlayAudio() async {
+    AssetsAudioPlayer assetsAudioPlayer = AssetsAudioPlayer();
+    assetsAudioPlayer.open(
+      Audio('assets/audios/click.mp3'),
+    );
   }
 
   @override
@@ -67,7 +77,13 @@ class ActionCard extends StatelessWidget {
   final String number;
   final String description;
 
-  const ActionCard({Key key, @required this.onPressed, this.icon, @required this.name, @required this.number, @required this.description})
+  const ActionCard(
+      {Key key,
+      @required this.onPressed,
+      this.icon,
+      @required this.name,
+      @required this.number,
+      @required this.description})
       : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -77,7 +93,8 @@ class ActionCard extends StatelessWidget {
         onTap: onPressed,
         child: Container(
           padding: EdgeInsets.all(13),
-          decoration: BoxDecoration(border: Border.all(width: 2), color: Colors.transparent),
+          decoration: BoxDecoration(
+              border: Border.all(width: 2), color: Colors.transparent),
           width: MediaQuery.of(context).size.width,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,

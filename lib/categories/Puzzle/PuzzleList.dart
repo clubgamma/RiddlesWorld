@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:riddleworld/categories/Puzzle/puzzle1@smit4297/puzzle1homescreen.dart';
 import 'package:riddleworld/universal/riddleAppbar.dart';
+import 'package:assets_audio_player/assets_audio_player.dart';
 
 class PuzzleList extends StatefulWidget {
   @override
@@ -25,6 +26,7 @@ class _StatePuzzleList extends State<PuzzleList> {
         description: '''IMORT YOUR FAV PICTURE AND SOLVE IT\nby @smit4297''',
         number: '1',
         onPressed: () {
+          onPlayAudio();
           Navigator.push(
               context,
               new MaterialPageRoute(
@@ -36,6 +38,13 @@ class _StatePuzzleList extends State<PuzzleList> {
     for (int i = 0; i < cardList.length; i++) {
       _listItems.add(cardList[i]);
     }
+  }
+
+  void onPlayAudio() async {
+    AssetsAudioPlayer assetsAudioPlayer = AssetsAudioPlayer();
+    assetsAudioPlayer.open(
+      Audio('assets/audios/click.mp3'),
+    );
   }
 
   @override

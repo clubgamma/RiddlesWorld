@@ -5,6 +5,7 @@ import 'dart:math';
 import '../../../universal/result.dart';
 import 'colors.dart';
 import 'randomRGB.dart';
+import 'package:assets_audio_player/assets_audio_player.dart';
 
 class FirstGame extends StatefulWidget {
   // FirstGame({Key key, this.title}) : super(key: key);
@@ -26,6 +27,7 @@ class _FirstGameState extends State<FirstGame> {
 
   void answerChooseHandler(int r, int g, int b) {
     if (r == randomR && g == randomG && b == randomB) {
+      onCorrect();
       Fluttertoast.cancel();
       Fluttertoast.showToast(
           msg: "CORRECT",
@@ -39,8 +41,8 @@ class _FirstGameState extends State<FirstGame> {
         questionCount += 1;
       });
     } else {
+      onWrong();
       Fluttertoast.cancel();
-
       Fluttertoast.showToast(
           msg: "WRONG",
           toastLength: Toast.LENGTH_SHORT,
@@ -59,6 +61,20 @@ class _FirstGameState extends State<FirstGame> {
       totalScore = 0;
       questionCount = 0;
     });
+  }
+
+  void onCorrect() async {
+    AssetsAudioPlayer assetsAudioPlayer = AssetsAudioPlayer();
+    assetsAudioPlayer.open(
+      Audio('assets/audios/correct.mp3'),
+    );
+  }
+
+  void onWrong() async {
+    AssetsAudioPlayer assetsAudioPlayer = AssetsAudioPlayer();
+    assetsAudioPlayer.open(
+      Audio('assets/audios/defeat_two.mp3'),
+    );
   }
 
   @override

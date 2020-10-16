@@ -5,6 +5,7 @@ import 'package:riddleworld/categories/words/words2@xyther14/words2HomePage.dart
 import 'package:riddleworld/categories/words/words3@tanharpatel/Words3HomeScreen.dart';
 import 'package:riddleworld/categories/words/words4@c0decreat0r/Words4HomeScreen.dart';
 import 'package:riddleworld/universal/riddleAppbar.dart';
+import 'package:assets_audio_player/assets_audio_player.dart';
 
 class WordsRiddleList extends StatefulWidget {
   @override
@@ -29,6 +30,7 @@ class _StateWordsRiddleList extends State<WordsRiddleList> {
               '''YOU HAVE TO FIND THE HIDDEN WORDS ON THE SCREEN\nby @sayutizxc''',
           number: '1',
           onPressed: () {
+            onPlayAudio();
             Navigator.of(context)
                 .push(MaterialPageRoute(builder: (ctx) => Words1HomePage()));
           }),
@@ -37,6 +39,7 @@ class _StateWordsRiddleList extends State<WordsRiddleList> {
           description: 'PLAY WITH WORDS\nby @xyther14',
           number: '2',
           onPressed: () {
+            onPlayAudio();
             Navigator.of(context)
                 .push(MaterialPageRoute(builder: (ctx) => Words2HomePage()));
           }),
@@ -45,6 +48,7 @@ class _StateWordsRiddleList extends State<WordsRiddleList> {
           description: 'THINK SMART, NOT TOUGH\nby @tanharpatel',
           number: '3',
           onPressed: () {
+            onPlayAudio();
             Navigator.of(context)
                 .push(MaterialPageRoute(builder: (ctx) => Words3HomeScreen()));
           }),
@@ -53,6 +57,7 @@ class _StateWordsRiddleList extends State<WordsRiddleList> {
           description: 'YOU KNOW ME...\nby @c0decreat0r',
           number: '4',
           onPressed: () {
+            onPlayAudio();
             Navigator.of(context)
                 .push(MaterialPageRoute(builder: (ctx) => Words4HomeScreen()));
           }),
@@ -61,6 +66,13 @@ class _StateWordsRiddleList extends State<WordsRiddleList> {
     for (int i = 0; i < cardList.length; i++) {
       _listItems.add(cardList[i]);
     }
+  }
+
+  void onPlayAudio() async {
+    AssetsAudioPlayer assetsAudioPlayer = AssetsAudioPlayer();
+    assetsAudioPlayer.open(
+      Audio('assets/audios/click.mp3'),
+    );
   }
 
   @override
