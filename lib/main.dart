@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 import 'package:riddleworld/categories/FindTheThing/FindTheThingList.dart';
 import 'package:riddleworld/categories/Game/ListOfGames.dart';
 import 'package:riddleworld/categories/Math/MathRiddlelLists.dart';
+import 'package:riddleworld/categories/Preference/Preference.dart';
 import 'package:riddleworld/categories/Puzzle/PuzzleList.dart';
 import 'package:riddleworld/categories/WhatSong/whatSongList.dart';
 import 'package:riddleworld/categories/words/WordriddleLists.dart';
 import 'package:riddleworld/homePage.dart';
 import 'package:riddleworld/universal/riddleWorld.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -32,7 +35,12 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return RiddleWorldHome();
+    return MultiProvider(providers: [
+      ChangeNotifierProvider<AppStateNotifier>(
+        create: (context) => AppStateNotifier(),
+        lazy: false,
+      ),
+    ], child: RiddleWorldHome());
   }
 }
 
@@ -42,24 +50,63 @@ class RiddleWorldHome extends StatefulWidget {
 }
 
 class _RiddleWorldHomeState extends State<RiddleWorldHome> {
+  SharedPreferences applicationPreference;
+  bool firstTime;
+
+  @override
+  void initState() {
+    SharedPreferences.getInstance().then((preference) {
+      applicationPreference = preference;
+      firstTime = applicationPreference.getBool("first_time");
+      if (firstTime == null) {
+        applicationPreference.setString("theme", "light").then((value) {
+          print("firstTime");
+          applicationPreference.setBool("first_time", false).then((value) {});
+        });
+      } else {
+        print("notFirstTime");
+        String theme = applicationPreference.getString("theme");
+        if (theme == "dark") {
+          Provider.of<AppStateNotifier>(context, listen: false).invertTheme();
+        }
+      }
+    });
+
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Riddle World',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        fontFamily: RiddleWorld.google_sans_family,
-        // primarySwatch: Colors.black,
-        primaryColor: Colors.white,
-        disabledColor: Colors.grey,
-        cardColor: Colors.white,
-        canvasColor: Colors.white,
-        brightness: Brightness.light,
-        appBarTheme: AppBarTheme(
-          elevation: 0.0,
-        ),
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
+      theme: Provider.of<AppStateNotifier>(context, listen: true).isDarkMode
+          ? ThemeData(
+              fontFamily: RiddleWorld.google_sans_family,
+              // primarySwatch: Colors.black,
+              primaryColor: Colors.black,
+              disabledColor: Colors.grey,
+              cardColor: Colors.black,
+              canvasColor: Colors.black,
+              brightness: Brightness.dark,
+              appBarTheme: AppBarTheme(
+                elevation: 0.0,
+              ),
+              visualDensity: VisualDensity.adaptivePlatformDensity,
+            )
+          : ThemeData(
+              fontFamily: RiddleWorld.google_sans_family,
+              // primarySwatch: Colors.black,
+              primaryColor: Colors.white,
+              disabledColor: Colors.grey,
+              cardColor: Colors.white,
+              canvasColor: Colors.white,
+              brightness: Brightness.light,
+              appBarTheme: AppBarTheme(
+                elevation: 0.0,
+              ),
+              visualDensity: VisualDensity.adaptivePlatformDensity,
+            ),
       home: Categories(),
       routes: {
         '/gamePage': (_) => GameLists(),
@@ -69,7 +116,26 @@ class _RiddleWorldHomeState extends State<RiddleWorldHome> {
         '/puzzlePage': (_) => PuzzleList(),
         '/whatSongPage': (_) => WhatSongList(),
         '/wordPage': (_) => WordsRiddleList(),
+        '/preference': (_) => Preference(),
       },
     );
+  }
+}
+
+class AppStateNotifier extends ChangeNotifier {
+  //
+  bool isDarkMode = false;
+  SharedPreferences applicationPreference;
+
+  Future<void> invertTheme() async {
+    applicationPreference = await SharedPreferences.getInstance();
+    this.isDarkMode = !isDarkMode;
+    if (isDarkMode) {
+      await applicationPreference.setString("theme", "dark");
+    } else {
+      await applicationPreference.setString("theme", "light");
+    }
+    print(applicationPreference?.getString("theme"));
+    notifyListeners();
   }
 }
