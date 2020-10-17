@@ -14,6 +14,8 @@ dependencies:
   fluttertoast: null
   cupertino_icons: ^0.1.3
   flutter_svg: ^0.18.0
+  shared_preferences: ^0.5.12+2
+  provider: ^4.3.2+2
   image_picker:
   just_audio:
   animated_widgets:

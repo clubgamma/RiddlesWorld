@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
+import 'package:riddleworld/core/theme_provider.dart';
 import 'package:assets_audio_player/assets_audio_player.dart';
 
 class Categories extends StatefulWidget {
@@ -84,6 +86,7 @@ class _StateCategories extends State<Categories> {
 
   @override
   Widget build(BuildContext context) {
+    final themeChange = Provider.of<ThemeProvider>(context);
     int columnCount = 2;
     return Scaffold(
       appBar: AppBar(
@@ -93,6 +96,14 @@ class _StateCategories extends State<Categories> {
             fontWeight: FontWeight.w500,
           ),
         ),
+        actions: [
+          IconButton(
+            icon: Icon(themeChange.darkMode ? Icons.brightness_2_rounded : Icons.wb_sunny_rounded),
+            onPressed: () {
+              themeChange.darkMode = !themeChange.darkMode;
+            },
+          )
+        ],
         centerTitle: true,
       ),
       body: AnimationLimiter(
@@ -151,6 +162,7 @@ class CategoryCard extends StatelessWidget {
                 children: [
                   SvgPicture.asset(
                     icon,
+                    color: Theme.of(context).accentColor,
                     height: 40.0,
                     width: 40.0,
                   ),
