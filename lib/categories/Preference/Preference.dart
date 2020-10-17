@@ -24,8 +24,19 @@ class _StatePreference extends State<Preference> {
       ActionCard(
         name: 'TOOGLE THEME',
         onPressed: () {
-          print("toogleTheme");
           Provider.of<AppStateNotifier>(context, listen: false).invertTheme();
+        },
+      ),
+      ActionCard(
+        name: 'CONTRIBUTORS',
+        onPressed: () {
+          Navigator.pushNamed(context, '/preference/contributors');
+        },
+      ),
+      ActionCard(
+        name: 'ABOUT',
+        onPressed: () {
+          print("contributors");
         },
       ),
     ];
@@ -38,7 +49,7 @@ class _StatePreference extends State<Preference> {
   @override
   Widget build(BuildContext context) {
     return RiddleBar(
-      title: 'GAMELISTS',
+      title: 'PREFERENCE',
       body: AnimationLimiter(
         child: ListView.builder(
           itemCount: _listItems.length,

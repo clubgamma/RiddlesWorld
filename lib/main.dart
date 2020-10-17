@@ -9,6 +9,7 @@ import 'package:riddleworld/categories/Puzzle/PuzzleList.dart';
 import 'package:riddleworld/categories/WhatSong/whatSongList.dart';
 import 'package:riddleworld/categories/words/WordriddleLists.dart';
 import 'package:riddleworld/homePage.dart';
+import 'package:riddleworld/universal/contributors.dart';
 import 'package:riddleworld/universal/riddleWorld.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -117,6 +118,7 @@ class _RiddleWorldHomeState extends State<RiddleWorldHome> {
         '/whatSongPage': (_) => WhatSongList(),
         '/wordPage': (_) => WordsRiddleList(),
         '/preference': (_) => Preference(),
+        '/preference/contributors': (_) => Contributors(),
       },
     );
   }
