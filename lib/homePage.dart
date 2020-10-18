@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:assets_audio_player/assets_audio_player.dart';
 
 class Categories extends StatefulWidget {
   @override
@@ -23,6 +24,7 @@ class _StateCategories extends State<Categories> {
         name: 'MATH',
         icon: 'assets/icons/math_icon.svg',
         onPressed: () {
+          onPlayAudio();
           Navigator.pushNamed(context, '/mathPage');
         },
       ),
@@ -30,6 +32,7 @@ class _StateCategories extends State<Categories> {
         name: 'WORDS',
         icon: 'assets/icons/words_icon.svg',
         onPressed: () {
+          onPlayAudio();
           Navigator.pushNamed(context, '/wordPage');
         },
       ),
@@ -37,6 +40,7 @@ class _StateCategories extends State<Categories> {
         name: 'PUZZLES',
         icon: 'assets/icons/puzzle_icon.svg',
         onPressed: () {
+          onPlayAudio();
           Navigator.pushNamed(context, '/puzzlePage');
         },
       ),
@@ -44,6 +48,7 @@ class _StateCategories extends State<Categories> {
         name: 'GAMES',
         icon: 'assets/icons/games_icon.svg',
         onPressed: () {
+          onPlayAudio();
           Navigator.pushNamed(context, '/gamePage');
         },
       ),
@@ -51,6 +56,7 @@ class _StateCategories extends State<Categories> {
         name: 'WHAT SONG',
         icon: 'assets/icons/music_icon.svg',
         onPressed: () {
+          onPlayAudio();
           Navigator.pushNamed(context, '/whatSongPage');
         },
       ),
@@ -58,6 +64,7 @@ class _StateCategories extends State<Categories> {
         name: 'FIND \nTHE THINGS',
         icon: 'assets/icons/things_icon.svg',
         onPressed: () {
+          onPlayAudio();
           Navigator.pushNamed(context, '/findThingPage');
         },
       ),
@@ -66,6 +73,13 @@ class _StateCategories extends State<Categories> {
     for (int i = 0; i < cardList.length; i++) {
       _listItems.add(cardList[i]);
     }
+  }
+
+  void onPlayAudio() async {
+    AssetsAudioPlayer assetsAudioPlayer = AssetsAudioPlayer();
+    assetsAudioPlayer.open(
+      Audio('assets/audios/click1.mp3'),
+    );
   }
 
   @override
