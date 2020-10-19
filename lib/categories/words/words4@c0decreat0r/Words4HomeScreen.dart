@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:riddleworld/universal/result.dart';
 import 'package:riddleworld/universal/riddleAppbar.dart';
-import 'package:provider/provider.dart';
-import 'package:riddleworld/main.dart';
 
 class Words4HomeScreen extends StatefulWidget {
   @override
@@ -26,13 +24,7 @@ class _Words4HomeScreenState extends State<Words4HomeScreen> {
     return RiddleBar(
       title: 'HEYYYY',
       body: _isScore
-          ? Result(
-              totalScore,
-              1,
-              resetHandler,
-              '/wordPage',
-              answer: totalScore == 1 ? "😁😎😶😑🥱😉😪😌😴😭🤣" : "",
-            )
+          ? Result(totalScore, 1, resetHandler, '/wordPage', answer: totalScore == 1 ? "😁😎😶😑🥱😉😪😌😴😭🤣": "",)
           : Center(
               child: ListView(
                 children: <Widget>[
@@ -44,13 +36,7 @@ class _Words4HomeScreenState extends State<Words4HomeScreen> {
                     child: Container(
                         padding: EdgeInsets.all(10),
                         decoration: BoxDecoration(
-                            border: Border.all(
-                                width: 2,
-                                color: Provider.of<AppStateNotifier>(context,
-                                            listen: false)
-                                        .isDarkMode
-                                    ? Colors.white
-                                    : Colors.black),
+                            border: Border.all(width: 1.6),
                             color: Colors.transparent),
                         width: MediaQuery.of(context).size.width * 0.9,
                         child: Align(
@@ -66,13 +52,7 @@ class _Words4HomeScreenState extends State<Words4HomeScreen> {
                       padding: EdgeInsets.all(8),
                       width: MediaQuery.of(context).size.width * 0.9,
                       decoration: BoxDecoration(
-                          border: Border.all(
-                              width: 2,
-                              color: Provider.of<AppStateNotifier>(context,
-                                          listen: false)
-                                      .isDarkMode
-                                  ? Colors.white
-                                  : Colors.black),
+                          border: Border.all(width: 1.6),
                           color: Colors.transparent),
                       child: Column(
                         children: [
@@ -91,10 +71,7 @@ class _Words4HomeScreenState extends State<Words4HomeScreen> {
                                 top: 10.0, right: 10, left: 10),
                             child: InkWell(
                               onTap: () {
-                                if (word == "EMOJIS" ||
-                                    word == "emojis" ||
-                                    word == "EMOJI" ||
-                                    word == "emoji") {
+                                if (word == "EMOJIS" || word == "emojis" || word == "EMOJI" || word == "emoji") {
                                   setState(() {
                                     totalScore = 1;
                                     _isScore = true;
@@ -109,14 +86,7 @@ class _Words4HomeScreenState extends State<Words4HomeScreen> {
                               child: Container(
                                 padding: EdgeInsets.all(10),
                                 decoration: BoxDecoration(
-                                    border: Border.all(
-                                        width: 2,
-                                        color: Provider.of<AppStateNotifier>(
-                                                    context,
-                                                    listen: false)
-                                                .isDarkMode
-                                            ? Colors.white
-                                            : Colors.black),
+                                    border: Border.all(width: 1.6),
                                     color: Colors.transparent),
                                 width: MediaQuery.of(context).size.width * 0.9,
                                 child: Text(
@@ -133,23 +103,23 @@ class _Words4HomeScreenState extends State<Words4HomeScreen> {
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: FlatButton(
-                                onPressed: () {
-                                  showDialog(
-                                      barrierDismissible: true,
-                                      context: context,
-                                      builder: (_) => AlertDialog(
-                                            content: Text("It is nothing 😁😝"),
-                                            actions: <Widget>[
-                                              FlatButton(
-                                                child: Text('Got it!'),
-                                                onPressed: () {
-                                                  Navigator.of(context).pop();
-                                                },
-                                              )
-                                            ],
-                                          ));
-                                },
-                                child: Text("Hint")),
+                              onPressed: () {
+                                showDialog(
+                                  barrierDismissible: true,
+                                  context: context,
+                                  builder: (_) => AlertDialog(
+                                    content: Text("It is nothing 😁😝"),
+                                    actions: <Widget>[
+                                      FlatButton(
+                                        child: Text('Got it!'),
+                                        onPressed: () {Navigator.of(context).pop();},
+                                      )
+                                    ],
+                                  )
+                                );
+                              },
+                              child: Text("Hint")
+                            ),
                           )
                         ],
                       ),

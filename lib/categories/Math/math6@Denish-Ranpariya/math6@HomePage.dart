@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:riddleworld/universal/result.dart';
 import 'package:riddleworld/universal/riddleAppbar.dart';
 import 'dart:math';
-import 'package:provider/provider.dart';
-import 'package:riddleworld/main.dart';
 
 class Math6HomeScreen extends StatefulWidget {
   @override
@@ -73,13 +71,7 @@ class _Math6HomeScreenState extends State<Math6HomeScreen> {
                       child: Container(
                         padding: EdgeInsets.all(10),
                         decoration: BoxDecoration(
-                            border: Border.all(
-                                width: 2,
-                                color: Provider.of<AppStateNotifier>(context,
-                                            listen: false)
-                                        .isDarkMode
-                                    ? Colors.white
-                                    : Colors.black),
+                            border: Border.all(width: 1.6),
                             color: Colors.transparent),
                         width: MediaQuery.of(context).size.width * 0.9,
                         child: Align(
@@ -153,13 +145,7 @@ class OptionButton extends StatelessWidget {
         child: Container(
           padding: EdgeInsets.all(10),
           decoration: BoxDecoration(
-              border: Border.all(
-                  width: 2,
-                  color: Provider.of<AppStateNotifier>(context, listen: false)
-                          .isDarkMode
-                      ? Colors.white
-                      : Colors.black),
-              color: Colors.transparent),
+              border: Border.all(width: 1.6), color: Colors.transparent),
           width: MediaQuery.of(context).size.width * 0.9,
           child: Align(
             alignment: Alignment.center,

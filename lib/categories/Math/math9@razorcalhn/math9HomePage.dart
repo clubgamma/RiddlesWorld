@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:riddleworld/universal/result.dart';
 import 'package:riddleworld/universal/riddleAppbar.dart';
-import 'package:provider/provider.dart';
-import 'package:riddleworld/main.dart';
 
 class Math9HomeScreen extends StatefulWidget {
   @override
@@ -26,10 +24,7 @@ class _Math9HomeScreenState extends State<Math9HomeScreen> {
     return RiddleBar(
       title: 'WRONG BUT RIGHT',
       body: _isScore
-          ? Result(totalScore, 1, resetHandler, '/mathPage',
-              answer: totalScore != 1
-                  ? ""
-                  : "One+Nine+Eight= ONE, similarly Two+Eight+Nine= TEN")
+          ? Result(totalScore, 1, resetHandler, '/mathPage', answer: totalScore != 1 ? "" : "One+Nine+Eight= ONE, similarly Two+Eight+Nine= TEN")
           : Center(
               child: ListView(
                 children: <Widget>[
@@ -41,13 +36,7 @@ class _Math9HomeScreenState extends State<Math9HomeScreen> {
                     child: Container(
                         padding: EdgeInsets.all(10),
                         decoration: BoxDecoration(
-                            border: Border.all(
-                                width: 2,
-                                color: Provider.of<AppStateNotifier>(context,
-                                            listen: false)
-                                        .isDarkMode
-                                    ? Colors.white
-                                    : Colors.black),
+                            border: Border.all(width: 1.6),
                             color: Colors.transparent),
                         width: MediaQuery.of(context).size.width * 0.9,
                         child: Align(
@@ -63,13 +52,7 @@ class _Math9HomeScreenState extends State<Math9HomeScreen> {
                       padding: EdgeInsets.all(8),
                       width: MediaQuery.of(context).size.width * 0.9,
                       decoration: BoxDecoration(
-                          border: Border.all(
-                              width: 2,
-                              color: Provider.of<AppStateNotifier>(context,
-                                          listen: false)
-                                      .isDarkMode
-                                  ? Colors.white
-                                  : Colors.black),
+                          border: Border.all(width: 1.6),
                           color: Colors.transparent),
                       child: Column(
                         children: [
@@ -103,14 +86,7 @@ class _Math9HomeScreenState extends State<Math9HomeScreen> {
                               child: Container(
                                 padding: EdgeInsets.all(10),
                                 decoration: BoxDecoration(
-                                    border: Border.all(
-                                        width: 2,
-                                        color: Provider.of<AppStateNotifier>(
-                                                    context,
-                                                    listen: false)
-                                                .isDarkMode
-                                            ? Colors.white
-                                            : Colors.black),
+                                    border: Border.all(width: 1.6),
                                     color: Colors.transparent),
                                 width: MediaQuery.of(context).size.width * 0.9,
                                 child: Text(

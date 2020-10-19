@@ -4,8 +4,7 @@ import 'package:riddleworld/categories/WhatSong/WhatSong1@maplerichie/WhatSong1Q
 import 'package:riddleworld/universal/riddleAppbar.dart';
 import 'dart:math';
 import '../../../universal/result.dart';
-import 'package:provider/provider.dart';
-import 'package:riddleworld/main.dart';
+import 'package:assets_audio_player/assets_audio_player.dart';
 
 class WhatSong1HomePage extends StatefulWidget {
   @override
@@ -37,6 +36,7 @@ class _WhatSong1HomePageState extends State<WhatSong1HomePage> {
   void answerHandler(String answer) {
     String correctAnswer = _questions[_questionIndex].answer;
     if (correctAnswer == answer) {
+      onCorrect();
       Fluttertoast.cancel();
       Fluttertoast.showToast(
           msg: "CORRECT",
@@ -52,7 +52,7 @@ class _WhatSong1HomePageState extends State<WhatSong1HomePage> {
       });
     } else {
       Fluttertoast.cancel();
-
+      onWrong();
       Fluttertoast.showToast(
           msg: "WRONG",
           toastLength: Toast.LENGTH_SHORT,
@@ -65,6 +65,20 @@ class _WhatSong1HomePageState extends State<WhatSong1HomePage> {
         _questionIndex += 1;
       });
     }
+  }
+
+  void onCorrect() async {
+    AssetsAudioPlayer assetsAudioPlayer = AssetsAudioPlayer();
+    assetsAudioPlayer.open(
+      Audio('assets/audios/correct.mp3'),
+    );
+  }
+
+  void onWrong() async {
+    AssetsAudioPlayer assetsAudioPlayer = AssetsAudioPlayer();
+    assetsAudioPlayer.open(
+      Audio('assets/audios/defeat_two.mp3'),
+    );
   }
 
   _buildOptions(List<String> options) {
@@ -85,13 +99,7 @@ class _WhatSong1HomePageState extends State<WhatSong1HomePage> {
         margin: const EdgeInsets.all(8),
         padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
-            border: Border.all(
-                width: 2,
-                color: Provider.of<AppStateNotifier>(context, listen: false)
-                        .isDarkMode
-                    ? Colors.white
-                    : Colors.black),
-            color: Colors.transparent),
+            border: Border.all(width: 1.6), color: Colors.transparent),
         width: MediaQuery.of(context).size.width * 0.9,
         child: Align(
           alignment: Alignment.center,
@@ -130,14 +138,7 @@ class _WhatSong1HomePageState extends State<WhatSong1HomePage> {
               margin: const EdgeInsets.all(8),
               padding: const EdgeInsets.all(8),
               decoration: BoxDecoration(
-                  border: Border.all(
-                      width: 2,
-                      color:
-                          Provider.of<AppStateNotifier>(context, listen: false)
-                                  .isDarkMode
-                              ? Colors.white
-                              : Colors.black),
-                  color: Colors.transparent),
+                  border: Border.all(width: 1.6), color: Colors.transparent),
               child: Column(
                 children: [
                   _buildQuestion(_questions[_questionIndex].question),

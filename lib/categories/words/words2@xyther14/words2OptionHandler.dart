@@ -1,43 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:riddleworld/categories/words/words2@xyther14/words2Questions.dart';
-import 'package:provider/provider.dart';
-import 'package:riddleworld/main.dart';
 
 class Words2Option extends StatelessWidget {
+
   final int questionNumber;
   final List<Questions> questions;
   final Function optionChooser;
 
-  const Words2Option({
-    this.questionNumber,
-    this.questions,
-    this.optionChooser,
-  });
+  const Words2Option({this.questionNumber, this.questions, this.optionChooser,});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        OptionWidget(
-          questionNumber: questionNumber,
-          optionNumber: 0,
-          onTap: optionChooser,
-        ),
-        OptionWidget(
-          questionNumber: questionNumber,
-          optionNumber: 1,
-          onTap: optionChooser,
-        ),
-        OptionWidget(
-          questionNumber: questionNumber,
-          optionNumber: 2,
-          onTap: optionChooser,
-        ),
-        OptionWidget(
-          questionNumber: questionNumber,
-          optionNumber: 3,
-          onTap: optionChooser,
-        ),
+        OptionWidget(questionNumber: questionNumber,optionNumber: 0,onTap: optionChooser,),
+        OptionWidget(questionNumber: questionNumber,optionNumber: 1,onTap: optionChooser,),
+        OptionWidget(questionNumber: questionNumber,optionNumber: 2,onTap: optionChooser,),
+        OptionWidget(questionNumber: questionNumber,optionNumber: 3,onTap: optionChooser,),
       ],
     );
   }
@@ -45,9 +24,7 @@ class Words2Option extends StatelessWidget {
 
 class OptionWidget extends StatelessWidget {
   const OptionWidget({
-    @required this.optionNumber,
-    this.questionNumber,
-    this.onTap,
+    @required this.optionNumber, this.questionNumber, this.onTap,
   });
 
   final int questionNumber;
@@ -65,12 +42,7 @@ class OptionWidget extends StatelessWidget {
         child: Container(
             padding: EdgeInsets.all(10),
             decoration: BoxDecoration(
-                border: Border.all(
-                    width: 2,
-                    color: Provider.of<AppStateNotifier>(context, listen: false)
-                            .isDarkMode
-                        ? Colors.white
-                        : Colors.black),
+                border: Border.all(width: 1.6),
                 color: Colors.transparent),
             width: MediaQuery.of(context).size.width * 0.9,
             child: Align(

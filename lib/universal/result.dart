@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
+import 'package:assets_audio_player/assets_audio_player.dart';
 
-class Result extends StatelessWidget {
+class Result extends StatefulWidget {
   final int score;
   final int questions;
   final String navigationPage;
@@ -10,6 +11,26 @@ class Result extends StatelessWidget {
 
   Result(this.score, this.questions, this.resetHandler, this.navigationPage,
       {this.answer});
+  @override
+  _ResultState createState() => _ResultState();
+}
+
+class _ResultState extends State<Result> {
+  @override
+  void initState() {
+    super.initState();
+    if (widget.score == 1) {
+      AssetsAudioPlayer assetsAudioPlayer = AssetsAudioPlayer();
+      assetsAudioPlayer.open(
+        Audio('assets/audios/correct.mp3'),
+      );
+    } else {
+      AssetsAudioPlayer assetsAudioPlayer = AssetsAudioPlayer();
+      assetsAudioPlayer.open(
+        Audio('assets/audios/defeat_two.mp3'),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -19,14 +40,14 @@ class Result extends StatelessWidget {
         style: TextStyle(fontSize: 22),
       ),
       Text(
-        '$score out of $questions',
+        '' + widget.score.toString() + ' out of ' + widget.questions.toString(),
         style: TextStyle(
           fontSize: 22,
         ),
       ),
       SizedBox(height: 20),
       Text(
-        answer ?? ' ',
+        widget.answer ?? ' ',
         textAlign: TextAlign.center,
         style: TextStyle(
           fontSize: 22,
@@ -50,7 +71,7 @@ class Result extends StatelessWidget {
       Padding(
         padding: const EdgeInsets.only(top: 10.0, right: 10, left: 10),
         child: InkWell(
-          onTap: resetHandler,
+          onTap: widget.resetHandler,
           child: Container(
             padding: EdgeInsets.all(10),
             decoration: BoxDecoration(
@@ -71,7 +92,7 @@ class Result extends StatelessWidget {
         padding: const EdgeInsets.only(top: 10.0, right: 10, left: 10),
         child: InkWell(
           onTap: () {
-            Navigator.of(context).pop(navigationPage);
+            Navigator.of(context).pop(widget.navigationPage);
           },
           child: Container(
             padding: EdgeInsets.all(10),
@@ -79,7 +100,7 @@ class Result extends StatelessWidget {
                 border: Border.all(width: 1.6), color: Colors.transparent),
             width: MediaQuery.of(context).size.width * 0.9,
             child: Text(
-              'BACK TO $navigationPage',
+              'BACK TO ' + widget.navigationPage.toString(),
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 25,

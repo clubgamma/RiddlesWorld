@@ -5,8 +5,7 @@ import 'dart:math';
 import '../../../universal/result.dart';
 import 'colors.dart';
 import 'randomRGB.dart';
-import 'package:provider/provider.dart';
-import 'package:riddleworld/main.dart';
+import 'package:assets_audio_player/assets_audio_player.dart';
 
 class FirstGame extends StatefulWidget {
   // FirstGame({Key key, this.title}) : super(key: key);
@@ -28,6 +27,7 @@ class _FirstGameState extends State<FirstGame> {
 
   void answerChooseHandler(int r, int g, int b) {
     if (r == randomR && g == randomG && b == randomB) {
+      onCorrect();
       Fluttertoast.cancel();
       Fluttertoast.showToast(
           msg: "CORRECT",
@@ -41,8 +41,8 @@ class _FirstGameState extends State<FirstGame> {
         questionCount += 1;
       });
     } else {
+      onWrong();
       Fluttertoast.cancel();
-
       Fluttertoast.showToast(
           msg: "WRONG",
           toastLength: Toast.LENGTH_SHORT,
@@ -61,6 +61,20 @@ class _FirstGameState extends State<FirstGame> {
       totalScore = 0;
       questionCount = 0;
     });
+  }
+
+  void onCorrect() async {
+    AssetsAudioPlayer assetsAudioPlayer = AssetsAudioPlayer();
+    assetsAudioPlayer.open(
+      Audio('assets/audios/correct.mp3'),
+    );
+  }
+
+  void onWrong() async {
+    AssetsAudioPlayer assetsAudioPlayer = AssetsAudioPlayer();
+    assetsAudioPlayer.open(
+      Audio('assets/audios/defeat_two.mp3'),
+    );
   }
 
   @override
@@ -84,13 +98,7 @@ class _FirstGameState extends State<FirstGame> {
                     child: Container(
                         padding: EdgeInsets.all(10),
                         decoration: BoxDecoration(
-                            border: Border.all(
-                                width: 2,
-                                color: Provider.of<AppStateNotifier>(context,
-                                            listen: false)
-                                        .isDarkMode
-                                    ? Colors.white
-                                    : Colors.black),
+                            border: Border.all(width: 1.6),
                             color: Colors.transparent),
                         width: MediaQuery.of(context).size.width * 0.9,
                         child: Align(
@@ -106,13 +114,7 @@ class _FirstGameState extends State<FirstGame> {
                       padding: EdgeInsets.all(8),
                       width: MediaQuery.of(context).size.width * 0.9,
                       decoration: BoxDecoration(
-                          border: Border.all(
-                              width: 2,
-                              color: Provider.of<AppStateNotifier>(context,
-                                          listen: false)
-                                      .isDarkMode
-                                  ? Colors.white
-                                  : Colors.black),
+                          border: Border.all(width: 1.6),
                           color: Colors.transparent),
                       child: Column(
                         children: [

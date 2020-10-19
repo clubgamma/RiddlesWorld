@@ -2,8 +2,6 @@ import 'package:animated_widgets/animated_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:riddleworld/universal/riddleAppbar.dart';
-import 'package:provider/provider.dart';
-import 'package:riddleworld/main.dart';
 
 class Games2HomeScreen extends StatefulWidget {
   @override
@@ -57,13 +55,7 @@ class _Games2HomeScreenState extends State<Games2HomeScreen> {
                       height: 50,
                       padding: EdgeInsets.all(10),
                       decoration: BoxDecoration(
-                          border: Border.all(
-                              width: 2,
-                              color: Provider.of<AppStateNotifier>(context,
-                                          listen: false)
-                                      .isDarkMode
-                                  ? Colors.white
-                                  : Colors.black),
+                          border: Border.all(width: 1.6),
                           color: Colors.transparent),
                       width: MediaQuery.of(context).size.width * 0.9,
                       child: Align(

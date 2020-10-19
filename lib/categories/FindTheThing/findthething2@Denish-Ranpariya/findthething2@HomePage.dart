@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:riddleworld/categories/FindTheThing/findthething2@Denish-Ranpariya/question_class.dart';
 import 'package:riddleworld/universal/result.dart';
 import 'package:riddleworld/universal/riddleAppbar.dart';
-import 'package:provider/provider.dart';
-import 'package:riddleworld/main.dart';
 
 class FindTheThing2HomeScreen extends StatefulWidget {
   @override
@@ -58,13 +56,7 @@ class _FindTheThing2HomeScreenState extends State<FindTheThing2HomeScreen> {
                       child: Container(
                         padding: EdgeInsets.all(10),
                         decoration: BoxDecoration(
-                            border: Border.all(
-                                width: 2,
-                                color: Provider.of<AppStateNotifier>(context,
-                                            listen: false)
-                                        .isDarkMode
-                                    ? Colors.white
-                                    : Colors.black),
+                            border: Border.all(width: 1.6),
                             color: Colors.transparent),
                         width: MediaQuery.of(context).size.width,
                         child: Align(
@@ -138,13 +130,7 @@ class OptionButton extends StatelessWidget {
         child: Container(
           padding: EdgeInsets.all(10),
           decoration: BoxDecoration(
-              border: Border.all(
-                  width: 2,
-                  color: Provider.of<AppStateNotifier>(context, listen: false)
-                          .isDarkMode
-                      ? Colors.white
-                      : Colors.black),
-              color: Colors.transparent),
+              border: Border.all(width: 1.6), color: Colors.transparent),
           width: MediaQuery.of(context).size.width * 0.9,
           child: Align(
             alignment: Alignment.center,
