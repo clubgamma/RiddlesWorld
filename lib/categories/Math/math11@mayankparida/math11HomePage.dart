@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:riddleworld/universal/result.dart';
 import 'package:riddleworld/universal/riddleAppbar.dart';
+import 'package:provider/provider.dart';
+import 'package:riddleworld/main.dart';
 
 class Math11HomeScreen extends StatefulWidget {
   @override
@@ -39,7 +41,13 @@ class _Math11HomeScreenState extends State<Math11HomeScreen> {
                     child: Container(
                         padding: EdgeInsets.all(10),
                         decoration: BoxDecoration(
-                            border: Border.all(width: 1.6),
+                            border: Border.all(
+                                width: 2,
+                                color: Provider.of<AppStateNotifier>(context,
+                                            listen: false)
+                                        .isDarkMode
+                                    ? Colors.white
+                                    : Colors.black),
                             color: Colors.transparent),
                         width: MediaQuery.of(context).size.width * 0.9,
                         child: Align(
@@ -55,7 +63,13 @@ class _Math11HomeScreenState extends State<Math11HomeScreen> {
                       padding: EdgeInsets.all(8),
                       width: MediaQuery.of(context).size.width * 0.9,
                       decoration: BoxDecoration(
-                          border: Border.all(width: 1.6),
+                          border: Border.all(
+                              width: 2,
+                              color: Provider.of<AppStateNotifier>(context,
+                                          listen: false)
+                                      .isDarkMode
+                                  ? Colors.white
+                                  : Colors.black),
                           color: Colors.transparent),
                       child: Column(
                         children: [
@@ -89,7 +103,14 @@ class _Math11HomeScreenState extends State<Math11HomeScreen> {
                               child: Container(
                                 padding: EdgeInsets.all(10),
                                 decoration: BoxDecoration(
-                                    border: Border.all(width: 1.6),
+                                    border: Border.all(
+                                        width: 2,
+                                        color: Provider.of<AppStateNotifier>(
+                                                    context,
+                                                    listen: false)
+                                                .isDarkMode
+                                            ? Colors.white
+                                            : Colors.black),
                                     color: Colors.transparent),
                                 width: MediaQuery.of(context).size.width * 0.9,
                                 child: Text(

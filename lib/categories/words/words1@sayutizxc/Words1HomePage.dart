@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:riddleworld/universal/result.dart';
 import 'package:riddleworld/universal/riddleAppbar.dart';
+import 'package:provider/provider.dart';
+import 'package:riddleworld/main.dart';
 
 class Words1HomePage extends StatefulWidget {
   @override
@@ -47,7 +49,13 @@ class _Words1HomePageState extends State<Words1HomePage> {
                     child: Container(
                         padding: EdgeInsets.all(10),
                         decoration: BoxDecoration(
-                            border: Border.all(width: 1.6),
+                            border: Border.all(
+                                width: 2,
+                                color: Provider.of<AppStateNotifier>(context,
+                                            listen: false)
+                                        .isDarkMode
+                                    ? Colors.white
+                                    : Colors.black),
                             color: Colors.transparent),
                         width: MediaQuery.of(context).size.width * 0.9,
                         child: Text(
@@ -62,7 +70,13 @@ class _Words1HomePageState extends State<Words1HomePage> {
                       padding: EdgeInsets.all(8),
                       width: MediaQuery.of(context).size.width * 0.9,
                       decoration: BoxDecoration(
-                          border: Border.all(width: 1.6),
+                          border: Border.all(
+                              width: 2,
+                              color: Provider.of<AppStateNotifier>(context,
+                                          listen: false)
+                                      .isDarkMode
+                                  ? Colors.white
+                                  : Colors.black),
                           color: Colors.transparent),
                       child: TextField(
                         controller: _controller,
@@ -76,7 +90,13 @@ class _Words1HomePageState extends State<Words1HomePage> {
                   Container(
                     margin: EdgeInsets.all(8),
                     decoration: BoxDecoration(
-                        border: Border.all(width: 1.6),
+                        border: Border.all(
+                            width: 2,
+                            color: Provider.of<AppStateNotifier>(context,
+                                        listen: false)
+                                    .isDarkMode
+                                ? Colors.white
+                                : Colors.black),
                         color: Colors.transparent),
                     child: FlatButton(
                       onPressed: () {

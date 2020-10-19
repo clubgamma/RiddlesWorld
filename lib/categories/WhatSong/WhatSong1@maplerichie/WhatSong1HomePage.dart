@@ -4,6 +4,8 @@ import 'package:riddleworld/categories/WhatSong/WhatSong1@maplerichie/WhatSong1Q
 import 'package:riddleworld/universal/riddleAppbar.dart';
 import 'dart:math';
 import '../../../universal/result.dart';
+import 'package:provider/provider.dart';
+import 'package:riddleworld/main.dart';
 
 class WhatSong1HomePage extends StatefulWidget {
   @override
@@ -82,7 +84,14 @@ class _WhatSong1HomePageState extends State<WhatSong1HomePage> {
       child: Container(
         margin: const EdgeInsets.all(8),
         padding: const EdgeInsets.all(8),
-        decoration: BoxDecoration(border: Border.all(width: 1.6), color: Colors.transparent),
+        decoration: BoxDecoration(
+            border: Border.all(
+                width: 2,
+                color: Provider.of<AppStateNotifier>(context, listen: false)
+                        .isDarkMode
+                    ? Colors.white
+                    : Colors.black),
+            color: Colors.transparent),
         width: MediaQuery.of(context).size.width * 0.9,
         child: Align(
           alignment: Alignment.center,
@@ -120,7 +129,15 @@ class _WhatSong1HomePageState extends State<WhatSong1HomePage> {
           ? Container(
               margin: const EdgeInsets.all(8),
               padding: const EdgeInsets.all(8),
-              decoration: BoxDecoration(border: Border.all(width: 1.6), color: Colors.transparent),
+              decoration: BoxDecoration(
+                  border: Border.all(
+                      width: 2,
+                      color:
+                          Provider.of<AppStateNotifier>(context, listen: false)
+                                  .isDarkMode
+                              ? Colors.white
+                              : Colors.black),
+                  color: Colors.transparent),
               child: Column(
                 children: [
                   _buildQuestion(_questions[_questionIndex].question),

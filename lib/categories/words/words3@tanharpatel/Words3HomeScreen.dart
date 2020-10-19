@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:riddleworld/universal/result.dart';
 import 'package:riddleworld/universal/riddleAppbar.dart';
+import 'package:provider/provider.dart';
+import 'package:riddleworld/main.dart';
 
 class Words3HomeScreen extends StatefulWidget {
   @override
@@ -24,7 +26,15 @@ class _Words3HomeScreenState extends State<Words3HomeScreen> {
     return RiddleBar(
       title: 'FIND THE MAGIAL WORD',
       body: _isScore
-          ? Result(totalScore, 1, resetHandler, '/wordPage', answer: totalScore == 1 ? "Bravo!! \'EMPTY\' can be mpty, mty, mt, and also \' \' 😉": "",)
+          ? Result(
+              totalScore,
+              1,
+              resetHandler,
+              '/wordPage',
+              answer: totalScore == 1
+                  ? "Bravo!! \'EMPTY\' can be mpty, mty, mt, and also \' \' 😉"
+                  : "",
+            )
           : Center(
               child: ListView(
                 children: <Widget>[
@@ -36,7 +46,13 @@ class _Words3HomeScreenState extends State<Words3HomeScreen> {
                     child: Container(
                         padding: EdgeInsets.all(10),
                         decoration: BoxDecoration(
-                            border: Border.all(width: 1.6),
+                            border: Border.all(
+                                width: 2,
+                                color: Provider.of<AppStateNotifier>(context,
+                                            listen: false)
+                                        .isDarkMode
+                                    ? Colors.white
+                                    : Colors.black),
                             color: Colors.transparent),
                         width: MediaQuery.of(context).size.width * 0.9,
                         child: Align(
@@ -52,7 +68,13 @@ class _Words3HomeScreenState extends State<Words3HomeScreen> {
                       padding: EdgeInsets.all(8),
                       width: MediaQuery.of(context).size.width * 0.9,
                       decoration: BoxDecoration(
-                          border: Border.all(width: 1.6),
+                          border: Border.all(
+                              width: 2,
+                              color: Provider.of<AppStateNotifier>(context,
+                                          listen: false)
+                                      .isDarkMode
+                                  ? Colors.white
+                                  : Colors.black),
                           color: Colors.transparent),
                       child: Column(
                         children: [
@@ -86,7 +108,14 @@ class _Words3HomeScreenState extends State<Words3HomeScreen> {
                               child: Container(
                                 padding: EdgeInsets.all(10),
                                 decoration: BoxDecoration(
-                                    border: Border.all(width: 1.6),
+                                    border: Border.all(
+                                        width: 2,
+                                        color: Provider.of<AppStateNotifier>(
+                                                    context,
+                                                    listen: false)
+                                                .isDarkMode
+                                            ? Colors.white
+                                            : Colors.black),
                                     color: Colors.transparent),
                                 width: MediaQuery.of(context).size.width * 0.9,
                                 child: Text(
@@ -103,23 +132,23 @@ class _Words3HomeScreenState extends State<Words3HomeScreen> {
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: FlatButton(
-                              onPressed: () {
-                                showDialog(
-                                  barrierDismissible: true,
-                                  context: context,
-                                  builder: (_) => AlertDialog(
-                                    content: Text("It is nothing 😁😝"),
-                                    actions: <Widget>[
-                                      FlatButton(
-                                        child: Text('Got it!'),
-                                        onPressed: () {Navigator.of(context).pop();},
-                                      )
-                                    ],
-                                  )
-                                );
-                              },
-                              child: Text("Hint")
-                            ),
+                                onPressed: () {
+                                  showDialog(
+                                      barrierDismissible: true,
+                                      context: context,
+                                      builder: (_) => AlertDialog(
+                                            content: Text("It is nothing 😁😝"),
+                                            actions: <Widget>[
+                                              FlatButton(
+                                                child: Text('Got it!'),
+                                                onPressed: () {
+                                                  Navigator.of(context).pop();
+                                                },
+                                              )
+                                            ],
+                                          ));
+                                },
+                                child: Text("Hint")),
                           )
                         ],
                       ),
