@@ -4,6 +4,9 @@ import 'package:riddleworld/categories/FindTheThing/findthething1@Denish-Ranpari
 import 'package:riddleworld/categories/FindTheThing/findthething2@Denish-Ranpariya/findthething2@HomePage.dart';
 import 'package:riddleworld/universal/actionCard.dart';
 import 'package:riddleworld/universal/riddleAppbar.dart';
+import 'package:assets_audio_player/assets_audio_player.dart';
+import 'package:provider/provider.dart';
+import 'package:riddleworld/main.dart';
 
 class FindTheThingList extends StatefulWidget {
   @override
@@ -28,6 +31,7 @@ class _StateFindTheThingList extends State<FindTheThingList> {
             'GUESS THE NAME OF COMPANY/BRAND USING GIVEN COLORS.\nby @Denish-Ranpariya',
         number: '1',
         onPressed: () {
+          onPlayAudio();
           Navigator.of(context).push(
               MaterialPageRoute(builder: (ctx) => FindTheThing1HomeScreen()));
         },
@@ -38,6 +42,7 @@ class _StateFindTheThingList extends State<FindTheThingList> {
             'FIND THE THING THAT IS DIFFERENT FROM OTHERS.\nby @Denish-Ranpariya',
         number: '2',
         onPressed: () {
+          onPlayAudio();
           Navigator.of(context).push(
               MaterialPageRoute(builder: (ctx) => FindTheThing2HomeScreen()));
         },
@@ -47,6 +52,15 @@ class _StateFindTheThingList extends State<FindTheThingList> {
     for (int i = 0; i < cardList.length; i++) {
       _listItems.add(cardList[i]);
     }
+  }
+
+  void onPlayAudio() async {
+    AssetsAudioPlayer assetsAudioPlayer = AssetsAudioPlayer();
+    Provider.of<AppStateNotifier>(context, listen: false).isMute
+        ? print('muted')
+        : assetsAudioPlayer.open(
+            Audio('assets/audios/click.mp3'),
+          );
   }
 
   @override
