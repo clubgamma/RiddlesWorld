@@ -3,6 +3,9 @@ import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:riddleworld/categories/WhatSong/WhatSong1@maplerichie/WhatSong1HomePage.dart';
 import 'package:riddleworld/universal/actionCard.dart';
 import 'package:riddleworld/universal/riddleAppbar.dart';
+import 'package:assets_audio_player/assets_audio_player.dart';
+import 'package:provider/provider.dart';
+import 'package:riddleworld/main.dart';
 
 class WhatSongList extends StatefulWidget {
   @override
@@ -26,6 +29,7 @@ class _StateWhatSongList extends State<WhatSongList> {
         description: '''Nice lyrics make a song beautiful\nby @maplerichie''',
         number: '1',
         onPressed: () {
+          onPlayAudio();
           Navigator.of(context)
               .push(MaterialPageRoute(builder: (ctx) => WhatSong1HomePage()));
         },
@@ -35,6 +39,15 @@ class _StateWhatSongList extends State<WhatSongList> {
     for (int i = 0; i < cardList.length; i++) {
       _listItems.add(cardList[i]);
     }
+  }
+
+  void onPlayAudio() async {
+    AssetsAudioPlayer assetsAudioPlayer = AssetsAudioPlayer();
+    Provider.of<AppStateNotifier>(context, listen: false).isMute
+        ? print('muted')
+        : assetsAudioPlayer.open(
+            Audio('assets/audios/click.mp3'),
+          );
   }
 
   @override

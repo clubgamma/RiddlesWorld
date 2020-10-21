@@ -64,11 +64,19 @@ class _RiddleWorldHomeState extends State<RiddleWorldHome> {
           print("firstTime");
           applicationPreference.setBool("first_time", false).then((value) {});
         });
+        applicationPreference
+            .setString("audio", "unmute")
+            .then((_) => print('unmute'));
       } else {
         print("notFirstTime");
+        String audio = applicationPreference.getString("audio");
         String theme = applicationPreference.getString("theme");
         if (theme == "dark") {
           Provider.of<AppStateNotifier>(context, listen: false).invertTheme();
+        }
+
+        if (audio == 'mute') {
+          Provider.of<AppStateNotifier>(context, listen: false).invertAudio();
         }
       }
     });
@@ -128,7 +136,7 @@ class AppStateNotifier extends ChangeNotifier {
   //
   bool isDarkMode = false;
   SharedPreferences applicationPreference;
-
+  bool isMute = false;
   Future<void> invertTheme() async {
     applicationPreference = await SharedPreferences.getInstance();
     this.isDarkMode = !isDarkMode;
@@ -138,6 +146,18 @@ class AppStateNotifier extends ChangeNotifier {
       await applicationPreference.setString("theme", "light");
     }
     print(applicationPreference?.getString("theme"));
+    notifyListeners();
+  }
+
+  Future<void> invertAudio() async {
+    applicationPreference = await SharedPreferences.getInstance();
+    this.isMute = !isMute;
+    if (isMute) {
+      await applicationPreference.setString("audio", "mute");
+    } else {
+      await applicationPreference.setString("audio", "unmute");
+    }
+    print(applicationPreference?.getString("audio"));
     notifyListeners();
   }
 }

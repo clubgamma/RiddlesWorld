@@ -6,6 +6,7 @@ import 'package:riddleworld/universal/riddleAppbar.dart';
 import '../../../universal/result.dart';
 import 'package:provider/provider.dart';
 import 'package:riddleworld/main.dart';
+import 'package:assets_audio_player/assets_audio_player.dart';
 
 class Words2HomePage extends StatefulWidget {
   @override
@@ -28,6 +29,7 @@ class _Words2HomePageState extends State<Words2HomePage> {
   void answerChooseHandler(int optionNumber) {
     int correctAnswer = questions[questionIndex].correctOption;
     if (correctAnswer == optionNumber) {
+      onCorrect();
       Fluttertoast.cancel();
       Fluttertoast.showToast(
           msg: "CORRECT",
@@ -43,7 +45,7 @@ class _Words2HomePageState extends State<Words2HomePage> {
       });
     } else {
       Fluttertoast.cancel();
-
+      onWrong();
       Fluttertoast.showToast(
           msg: "WRONG",
           toastLength: Toast.LENGTH_SHORT,
@@ -56,6 +58,24 @@ class _Words2HomePageState extends State<Words2HomePage> {
         questionIndex += 1;
       });
     }
+  }
+
+  void onCorrect() async {
+    AssetsAudioPlayer assetsAudioPlayer = AssetsAudioPlayer();
+    Provider.of<AppStateNotifier>(context, listen: false).isMute
+        ? print('muted')
+        : assetsAudioPlayer.open(
+            Audio('assets/audios/correct.mp3'),
+          );
+  }
+
+  void onWrong() async {
+    AssetsAudioPlayer assetsAudioPlayer = AssetsAudioPlayer();
+    Provider.of<AppStateNotifier>(context, listen: false).isMute
+        ? print('muted')
+        : assetsAudioPlayer.open(
+            Audio('assets/audios/defeat_two.mp3'),
+          );
   }
 
   @override

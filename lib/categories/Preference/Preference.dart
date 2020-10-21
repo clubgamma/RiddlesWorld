@@ -11,6 +11,7 @@ class Preference extends StatefulWidget {
 
 class _StatePreference extends State<Preference> {
   List<Widget> _listItems = <Widget>[];
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
@@ -25,6 +26,19 @@ class _StatePreference extends State<Preference> {
         name: 'TOOGLE THEME',
         onPressed: () {
           Provider.of<AppStateNotifier>(context, listen: false).invertTheme();
+        },
+      ),
+      ActionCard(
+        name: 'TOOGLE AUDIO',
+        onPressed: () {
+          Provider.of<AppStateNotifier>(context, listen: false).invertAudio();
+          _scaffoldKey.currentState.showSnackBar(SnackBar(
+            content:
+                Provider.of<AppStateNotifier>(context, listen: false).isMute
+                    ? Text('Unmuted')
+                    : Text('Muted'),
+            duration: Duration(seconds: 2),
+          ));
         },
       ),
       ActionCard(
@@ -48,26 +62,28 @@ class _StatePreference extends State<Preference> {
 
   @override
   Widget build(BuildContext context) {
-    return RiddleBar(
-      title: 'PREFERENCE',
-      body: AnimationLimiter(
-        child: ListView.builder(
-          itemCount: _listItems.length,
-          itemBuilder: (BuildContext context, int index) {
-            return AnimationConfiguration.staggeredList(
-              position: index,
-              duration: const Duration(milliseconds: 1000),
-              child: SlideAnimation(
-                verticalOffset: 50.0,
-                child: FadeInAnimation(
-                  child: _listItems[index],
-                ),
-              ),
-            );
-          },
-        ),
-      ),
-    );
+    return Scaffold(
+        key: _scaffoldKey,
+        body: RiddleBar(
+          title: 'PREFERENCE',
+          body: AnimationLimiter(
+            child: ListView.builder(
+              itemCount: _listItems.length,
+              itemBuilder: (BuildContext context, int index) {
+                return AnimationConfiguration.staggeredList(
+                  position: index,
+                  duration: const Duration(milliseconds: 1000),
+                  child: SlideAnimation(
+                    verticalOffset: 50.0,
+                    child: FadeInAnimation(
+                      child: _listItems[index],
+                    ),
+                  ),
+                );
+              },
+            ),
+          ),
+        ));
   }
 }
 
