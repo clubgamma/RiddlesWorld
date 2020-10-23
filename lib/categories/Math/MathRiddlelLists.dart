@@ -11,6 +11,7 @@ import 'package:riddleworld/universal/actionCard.dart';
 import 'package:riddleworld/universal/riddleAppbar.dart';
 import 'math12@Test-User-0123/math12HomePage.dart';
 import 'math13@AdityaLalwani/math13HomePage.dart';
+import 'math14@kamal-kaur04/math14HomePage.dart';
 import 'math9@razorcalhn/math9HomePage.dart';
 import 'math10@bibekpanda55/math10HomePage.dart';
 import 'math2@Stephen-Odumirin/math2HomePage.dart';
@@ -170,6 +171,15 @@ class _StateMathRiddles extends State<MathRiddles> {
             onPlayAudio();
             Navigator.of(context)
                 .push(MaterialPageRoute(builder: (ctx) => Math13HomeScreen()));
+          }),
+      ActionCard(
+          name: 'Inheritance',
+          description: 'A math riddle based on the inheritance by @kamal-kaur04',
+          number: '14',
+          onPressed: () {
+            onPlayAudio();
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (ctx) => Math14HomeScreen()));
           }),
     ];
 
