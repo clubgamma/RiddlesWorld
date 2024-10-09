@@ -17,7 +17,7 @@ class _WhatSong1HomePageState extends State<WhatSong1HomePage> {
   int _score = 0;
   int _questionCount = 0;
   int _questionIndex = 0;
-  List<Question> _questions;
+  List<Question> _questions = [];
   Random _rnd = new Random();
 
   @override

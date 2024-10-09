@@ -9,13 +9,13 @@ class AppbarButton extends StatelessWidget {
   final IconData icon;
   final Color iconColor;
   final double iconSize;
-  final Function onPressed;
+  final Function() onPressed;
 
   AppbarButton({
-    Key key,
-    @required this.tooltip,
-    @required this.icon,
-    @required this.onPressed,
+     super.key,
+    required this.tooltip,
+    required this.icon,
+    required this.onPressed,
     verticalOffset,
     tooltipColor,
     tooltipBackgroundColor,
@@ -26,8 +26,7 @@ class AppbarButton extends StatelessWidget {
         this.tooltipBackgroundColor =
             tooltipBackgroundColor ?? Color.fromRGBO(47, 47, 47, 1),
         this.iconColor = iconColor ?? Color.fromRGBO(47, 47, 47, 1),
-        this.iconSize = iconSize ?? 37,
-        super(key: key);
+        this.iconSize = iconSize ?? 37;
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +44,7 @@ class AppbarButton extends StatelessWidget {
         child: ButtonTheme(
           minWidth: 31,
           padding: EdgeInsets.all(7),
-          child: FlatButton(
+          child: TextButton(
             child: Icon(
               this.icon,
               size: this.iconSize,

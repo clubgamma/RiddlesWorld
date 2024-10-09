@@ -7,12 +7,12 @@ class QuestionClass {
   String description;
 
   QuestionClass({
-    this.option1,
-    this.option2,
-    this.option3,
-    this.option4,
-    this.correctAnswer,
-    this.description,
+    required this.option1,
+    required this.option2,
+    required this.option3,
+    required this.option4,
+    required this.correctAnswer,
+    required this.description,
   });
 }
 

@@ -10,7 +10,7 @@ class Words4HomeScreen extends StatefulWidget {
 }
 
 class _Words4HomeScreenState extends State<Words4HomeScreen> {
-  String word;
+  String? word;
   bool _isScore = false;
   int totalScore = 0;
 
@@ -132,7 +132,7 @@ class _Words4HomeScreenState extends State<Words4HomeScreen> {
                           ),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: FlatButton(
+                            child: TextButton(
                                 onPressed: () {
                                   showDialog(
                                       barrierDismissible: true,
@@ -140,7 +140,7 @@ class _Words4HomeScreenState extends State<Words4HomeScreen> {
                                       builder: (_) => AlertDialog(
                                             content: Text("It is nothing 😁😝"),
                                             actions: <Widget>[
-                                              FlatButton(
+                                              TextButton(
                                                 child: Text('Got it!'),
                                                 onPressed: () {
                                                   Navigator.of(context).pop();

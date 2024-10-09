@@ -3,20 +3,19 @@ import 'package:provider/provider.dart';
 import 'package:riddleworld/main.dart';
 
 class ActionCard extends StatelessWidget {
-  final Function onPressed;
-  final IconData icon;
+  final Function() onPressed;
+  final IconData? icon;
   final String name;
   final String number;
   final String description;
 
   const ActionCard(
-      {Key key,
-      @required this.onPressed,
+      {super.key,
+      required this.onPressed,
       this.icon,
-      @required this.name,
-      @required this.number,
-      @required this.description})
-      : super(key: key);
+      required this.name,
+      required this.number,
+      required this.description});
   @override
   Widget build(BuildContext context) {
     return Padding(

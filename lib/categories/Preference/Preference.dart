@@ -32,7 +32,7 @@ class _StatePreference extends State<Preference> {
         name: 'TOOGLE AUDIO',
         onPressed: () {
           Provider.of<AppStateNotifier>(context, listen: false).invertAudio();
-          _scaffoldKey.currentState.showSnackBar(SnackBar(
+          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
             content:
                 Provider.of<AppStateNotifier>(context, listen: false).isMute
                     ? Text('Unmuted')
@@ -88,18 +88,17 @@ class _StatePreference extends State<Preference> {
 }
 
 class ActionCard extends StatelessWidget {
-  final Function onPressed;
-  final IconData icon;
+  final Function() onPressed;
+  final IconData? icon;
   final String name;
   // final String description;
 
   const ActionCard({
-    Key key,
-    @required this.onPressed,
+    required this.onPressed,
     this.icon,
-    @required this.name,
+    required this.name,
     // @required this.description
-  }) : super(key: key);
+  });
   @override
   Widget build(BuildContext context) {
     return Padding(

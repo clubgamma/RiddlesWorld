@@ -3,16 +3,15 @@ import 'package:flutter/material.dart';
 class RiddleBar extends StatefulWidget {
   final String title;
   final Widget body;
-  final Widget tabBar;
-  final bool cross;
+  final PreferredSizeWidget? tabBar;
+  final bool? cross;
 
   const RiddleBar(
-      {Key key,
-      @required this.body,
-      @required this.title,
+      {super.key,
+      required this.body,
+      required this.title,
       this.tabBar,
-      this.cross})
-      : super(key: key);
+      this.cross});
 
   @override
   _RiddleBarState createState() => _RiddleBarState();
@@ -34,7 +33,7 @@ class _RiddleBarState extends State<RiddleBar> {
               style: TextStyle(fontWeight: FontWeight.w500),
             ),
             centerTitle: true,
-            bottom: widget.tabBar != null ? widget.tabBar : null,
+            bottom: widget.tabBar ?? null,
             leading:InkWell(
                 onTap: () {
                   Navigator.of(context).pop();

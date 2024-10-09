@@ -97,25 +97,24 @@ class _StateContributors extends State<Contributors> {
 }
 
 class ActionCard extends StatelessWidget {
-  final Function onPressed;
-  final IconData icon;
+  final Function() onPressed;
+  final IconData? icon;
   final String name;
   final String id;
-  final String url;
+  final String? url;
 
   const ActionCard(
-      {Key key,
-      @required this.onPressed,
+      {super.key,
+      required this.onPressed,
       this.icon,
-      @required this.name,
-      this.id,
-      this.url})
-      : super(key: key);
+      required this.name,
+      required this.id,
+      this.url});
 
   _launchURL() async {
     ;
-    if (await canLaunch(url)) {
-      await launch(url);
+    if (await canLaunchUrl(Uri.https(url ?? ''))) {
+      await launch(url ?? '');
     } else {
       throw 'Could not launch $url';
     }

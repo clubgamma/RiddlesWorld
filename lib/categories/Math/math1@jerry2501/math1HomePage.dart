@@ -10,7 +10,7 @@ class Math1HomeScreen extends StatefulWidget {
 }
 
 class _Math1HomeScreenState extends State<Math1HomeScreen> {
-  int number;
+  int? number;
   bool _isScore = false;
   int totalScore = 0;
 

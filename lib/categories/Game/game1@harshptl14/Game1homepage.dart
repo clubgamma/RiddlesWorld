@@ -8,8 +8,6 @@ import 'randomRGB.dart';
 import 'package:provider/provider.dart';
 import 'package:riddleworld/main.dart';
 import 'package:assets_audio_player/assets_audio_player.dart';
-import 'package:provider/provider.dart';
-import 'package:riddleworld/main.dart';
 
 class FirstGame extends StatefulWidget {
   // FirstGame({Key key, this.title}) : super(key: key);
@@ -22,9 +20,9 @@ class FirstGame extends StatefulWidget {
 
 class _FirstGameState extends State<FirstGame> {
   Random random = Random();
-  int randomR;
-  int randomG;
-  int randomB;
+  int? randomR;
+  int? randomG;
+  int? randomB;
 
   int totalScore = 0;
   int questionCount = 0;
@@ -138,9 +136,9 @@ class _FirstGameState extends State<FirstGame> {
                           color: Colors.transparent),
                       child: Column(
                         children: [
-                          RGB(randomR, randomG, randomB),
+                          RGB(randomR ?? 0, randomG ?? 0, randomB ?? 0),
                           ColorOptions(
-                              randomR, randomG, randomB, answerChooseHandler),
+                              randomR ?? 0, randomG ?? 0, randomB ?? 0, answerChooseHandler),
                           SizedBox(
                             height: 60,
                           )

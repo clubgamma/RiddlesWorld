@@ -6,12 +6,12 @@ import 'package:riddleworld/main.dart';
 class Words2Option extends StatelessWidget {
   final int questionNumber;
   final List<Questions> questions;
-  final Function optionChooser;
+  final Function(int option) optionChooser;
 
   const Words2Option({
-    this.questionNumber,
-    this.questions,
-    this.optionChooser,
+   required this.questionNumber,
+   required this.questions,
+   required this.optionChooser,
   });
 
   @override
@@ -45,14 +45,14 @@ class Words2Option extends StatelessWidget {
 
 class OptionWidget extends StatelessWidget {
   const OptionWidget({
-    @required this.optionNumber,
-    this.questionNumber,
-    this.onTap,
+    required this.optionNumber,
+   required this.questionNumber,
+   required this.onTap,
   });
 
   final int questionNumber;
   final int optionNumber;
-  final Function onTap;
+  final Function(int option) onTap;
 
   @override
   Widget build(BuildContext context) {

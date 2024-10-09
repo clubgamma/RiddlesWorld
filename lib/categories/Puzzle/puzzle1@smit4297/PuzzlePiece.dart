@@ -2,8 +2,9 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
+
 class PuzzlePiece extends StatefulWidget {
-  final Image image;
+    final Image image;
   final Size imageSize;
   final int row;
   final int col;
@@ -11,28 +12,15 @@ class PuzzlePiece extends StatefulWidget {
   final int maxCol;
   final Function bringToTop;
   final Function sendToBack;
-
-  PuzzlePiece(
-      {Key key,
-      @required this.image,
-      @required this.imageSize,
-      @required this.row,
-      @required this.col,
-      @required this.maxRow,
-      @required this.bringToTop,
-      @required this.sendToBack,
-      @required this.maxCol})
-      : super(key: key);
+  const PuzzlePiece({super.key, required this.image, required this.imageSize, required this.row, required this.col, required this.maxRow, required this.maxCol, required this.bringToTop, required this.sendToBack});
 
   @override
-  PuzzlePieceState createState() {
-    return new PuzzlePieceState();
-  }
+  State<PuzzlePiece> createState() => _PuzzlePieceState();
 }
 
-class PuzzlePieceState extends State<PuzzlePiece> {
-  double top;
-  double left;
+class _PuzzlePieceState extends State<PuzzlePiece> {
+  double? top;
+  double? left;
   bool isMovable = true;
 
   @override
@@ -46,11 +34,11 @@ class PuzzlePieceState extends State<PuzzlePiece> {
 
     if (top == null) {
       top = Random().nextInt((imageHeight - pieceHeight).ceil()).toDouble();
-      top -= widget.row * pieceHeight;
+      top = top !- widget.row * pieceHeight;
     }
     if (left == null) {
       left = Random().nextInt((imageWidth - pieceWidth).ceil()).toDouble();
-      left -= widget.col * pieceWidth;
+      left = left !- widget.col * pieceWidth;
     }
 
     return Positioned(
@@ -71,10 +59,10 @@ class PuzzlePieceState extends State<PuzzlePiece> {
         onPanUpdate: (dragUpdateDetails) {
           if (isMovable) {
             setState(() {
-              top += dragUpdateDetails.delta.dy;
-              left += dragUpdateDetails.delta.dx;
+              top = top !+ dragUpdateDetails.delta.dy;
+              left = left !+ dragUpdateDetails.delta.dx;
 
-              if (-10 < top && top < 10 && -10 < left && left < 10) {
+              if (-10 < top! && top! < 10 && -10 < left! && left! < 10) {
                 top = 0;
                 left = 0;
                 isMovable = false;

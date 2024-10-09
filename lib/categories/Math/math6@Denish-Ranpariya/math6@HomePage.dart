@@ -11,7 +11,7 @@ class Math6HomeScreen extends StatefulWidget {
 }
 
 class _Math6HomeScreenState extends State<Math6HomeScreen> {
-  int number;
+  int? number;
   bool _isScore = false;
   int totalScore = 0;
 
@@ -140,9 +140,9 @@ class _Math6HomeScreenState extends State<Math6HomeScreen> {
 
 class OptionButton extends StatelessWidget {
   final int number;
-  final Function onTap;
+  final Function() onTap;
 
-  OptionButton({this.number, this.onTap});
+  OptionButton({required this.number, required this.onTap});
 
   @override
   Widget build(BuildContext context) {

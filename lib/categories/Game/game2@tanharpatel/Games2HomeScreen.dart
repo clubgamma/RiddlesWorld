@@ -11,12 +11,11 @@ class Games2HomeScreen extends StatefulWidget {
 }
 
 class _Games2HomeScreenState extends State<Games2HomeScreen> {
-  AudioPlayer audio;
+  AudioPlayer audio = AudioPlayer();
   bool enable = false;
 
   @override
   void initState() {
-    audio = AudioPlayer();
     audio.setLoopMode(LoopMode.one);
     audio.setVolume(100);
     initial();

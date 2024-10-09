@@ -16,7 +16,7 @@ class FindTheThing1HomeScreen extends StatefulWidget {
 
 class _FindTheThing1HomeScreenState extends State<FindTheThing1HomeScreen> {
   int index = Random().nextInt(7);
-  String answer;
+  String answer = '';
   bool _isScore = false;
   int totalScore = 0;
   TextEditingController controller = new TextEditingController();

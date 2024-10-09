@@ -10,7 +10,7 @@ class Math8HomeScreen extends StatefulWidget {
 }
 
 class _Math8HomeScreenState extends State<Math8HomeScreen> {
-  String number;
+  String? number;
   bool _isScore = false;
   int totalScore = 0;
 
