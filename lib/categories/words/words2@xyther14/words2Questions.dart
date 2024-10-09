@@ -4,9 +4,9 @@ class Questions {
   int correctOption;
 
   Questions({
-    this.question,
-    this.options,
-    this.correctOption,
+   required this.question,
+   required this.options,
+   required this.correctOption,
   });
 }
 

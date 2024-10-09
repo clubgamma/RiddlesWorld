@@ -8,8 +8,8 @@ class Result extends StatefulWidget {
   final int score;
   final int questions;
   final String navigationPage;
-  final Function resetHandler;
-  final String answer;
+  final Function() resetHandler;
+  final String? answer;
 
   Result(this.score, this.questions, this.resetHandler, this.navigationPage,
       {this.answer});

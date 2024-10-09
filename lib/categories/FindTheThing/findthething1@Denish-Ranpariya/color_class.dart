@@ -6,7 +6,7 @@ class ColorClass {
   Color color3;
   Color color4;
   String answer;
-  ColorClass({this.color1, this.color2, this.color3, this.color4, this.answer});
+  ColorClass({required this.color1, required this.color2, required this.color3, required this.color4, required this.answer});
 }
 
 List<ColorClass> colors = [

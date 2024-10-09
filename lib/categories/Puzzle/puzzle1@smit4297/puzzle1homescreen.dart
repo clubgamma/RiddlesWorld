@@ -10,25 +10,25 @@ class PuzzleHomePage extends StatefulWidget {
   final int rows = 3;
   final int cols = 3;
 
-  PuzzleHomePage({Key key, this.title}) : super(key: key);
+  PuzzleHomePage({required this.title});
 
   @override
   _PuzzleHomePageState createState() => _PuzzleHomePageState();
 }
 
 class _PuzzleHomePageState extends State<PuzzleHomePage> {
-  File _image;
+  File? _image;
   List<Widget> pieces = [];
 
   Future getImage(ImageSource source) async {
-    var image = await ImagePicker.pickImage(source: source);
+    var image = await ImagePicker().pickImage(source: source);
 
     if (image != null) {
       setState(() {
-        _image = image;
+        _image = File(image.path);
         pieces.clear();
       });
-      splitImage(Image.file(image));
+      splitImage(Image.file(File(image.path)));
     }
   }
 

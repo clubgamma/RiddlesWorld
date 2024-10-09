@@ -98,7 +98,7 @@ class _Words1HomePageState extends State<Words1HomePage> {
                                 ? Colors.white
                                 : Colors.black),
                         color: Colors.transparent),
-                    child: FlatButton(
+                    child: TextButton(
                       onPressed: () {
                         if (_controller.text.trim() == "FROM THE DARK") {
                           setState(() {

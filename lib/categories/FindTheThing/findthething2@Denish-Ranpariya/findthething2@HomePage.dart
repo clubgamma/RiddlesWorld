@@ -14,7 +14,7 @@ class FindTheThing2HomeScreen extends StatefulWidget {
 }
 
 class _FindTheThing2HomeScreenState extends State<FindTheThing2HomeScreen> {
-  int number;
+  int? number;
   bool _isScore = false;
   int totalScore = 0;
   int index = Random().nextInt(6);
@@ -125,9 +125,9 @@ class _FindTheThing2HomeScreenState extends State<FindTheThing2HomeScreen> {
 
 class OptionButton extends StatelessWidget {
   final String optionString;
-  final Function onTap;
+  final Function() onTap;
 
-  OptionButton({this.optionString, this.onTap});
+  OptionButton({required this.optionString, required this.onTap});
 
   @override
   Widget build(BuildContext context) {

@@ -138,20 +138,19 @@ class _StateCategories extends State<Categories> {
 }
 
 class CategoryCard extends StatelessWidget {
-  final Function onPressed;
+  final Function() onPressed;
   final String icon;
   final String name;
-  final String number;
-  final String description;
+  final String? number;
+  final String? description;
 
   const CategoryCard(
-      {Key key,
-      this.onPressed,
-      this.icon,
-      this.name,
+      {super.key,
+      required this.onPressed,
+      required this.icon,
+      required this.name,
       this.number,
-      this.description})
-      : super(key: key);
+       this.description});
   @override
   Widget build(BuildContext context) {
     return Padding(

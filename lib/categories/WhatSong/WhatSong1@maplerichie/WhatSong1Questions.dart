@@ -4,9 +4,9 @@ class Question {
   String answer;
 
   Question({
-    this.question,
-    this.options,
-    this.answer,
+  required  this.question,
+   required this.options,
+  required  this.answer,
   });
 }
 
