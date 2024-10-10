@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:riddleworld/categories/Game/game1@harshptl14/Game1homepage.dart';
 import 'package:riddleworld/categories/Game/game2@tanharpatel/Games2HomeScreen.dart';
+import 'package:riddleworld/categories/Puzzle/wordle@hassanteslim007/wordle.dart';
 import 'package:riddleworld/universal/actionCard.dart';
 import 'package:riddleworld/universal/riddleAppbar.dart';
 import 'package:assets_audio_player/assets_audio_player.dart';
@@ -44,6 +45,17 @@ class _StateGameLists extends State<GameLists> {
           onPlayAudio();
           Navigator.push(context,
               new MaterialPageRoute(builder: (context) => Games2HomeScreen()));
+        },
+      ),
+      ActionCard(
+        name: 'WORDLE',
+        description:
+            '''GUESS THE CORRECT WORD BEFORE YOUR TRIALS RUN OUT\nby @hassanteslim007''',
+        number: '3',
+        onPressed: () {
+          onPlayAudio();
+          Navigator.push(
+              context, new MaterialPageRoute(builder: (context) => Wordle()));
         },
       ),
     ];
