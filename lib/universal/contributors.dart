@@ -114,8 +114,8 @@ class ActionCard extends StatelessWidget {
 
   _launchURL() async {
     ;
-    if (await canLaunchUrl(Uri.https(url ?? ''))) {
-      await launch(url ?? '');
+    if (await canLaunchUrl(Uri.https('github.com', url!.split('/').last))) {
+      await launchUrl(Uri.https('github.com', url!.split('/').last));
     } else {
       throw 'Could not launch $url';
     }
