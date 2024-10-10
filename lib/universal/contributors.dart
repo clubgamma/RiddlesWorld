@@ -57,6 +57,7 @@ class _StateContributors extends State<Contributors> {
       ["Sayuti", "Sayutizxc", "https://github.com/Sayutizxc"],
       ["Moyin Shabi", "MoyinShabi", "https://github.com/MoyinShabi"],
       ["Aditya Lalwani", "AdityaLalwani", "https://github.com/AdityaLalwani"],
+      ["Hassan Teslim", "HassanTeslim007", "https://github.com/hassanteslim007"]
     ];
 
     for (int i = 0; i < contributorName.length; i++) {
