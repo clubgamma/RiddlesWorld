@@ -23,6 +23,8 @@ dependencies:
   animated_widgets:
   flutter_staggered_animations: ^1.1.1
   assets_audio_player: ^3.1.1
+  english_words: ^4.0.0
+  flutter_dialogs: ^3.0.0
 
 dev_dependencies:
   flutter_test:

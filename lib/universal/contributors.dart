@@ -57,6 +57,7 @@ class _StateContributors extends State<Contributors> {
       ["Sayuti", "Sayutizxc", "https://github.com/Sayutizxc"],
       ["Moyin Shabi", "MoyinShabi", "https://github.com/MoyinShabi"],
       ["Aditya Lalwani", "AdityaLalwani", "https://github.com/AdityaLalwani"],
+      ["Hassan Teslim", "HassanTeslim007", "https://github.com/hassanteslim007"]
     ];
 
     for (int i = 0; i < contributorName.length; i++) {
@@ -113,8 +114,8 @@ class ActionCard extends StatelessWidget {
 
   _launchURL() async {
     ;
-    if (await canLaunchUrl(Uri.https(url ?? ''))) {
-      await launch(url ?? '');
+    if (await canLaunchUrl(Uri.https('github.com', url!.split('/').last))) {
+      await launchUrl(Uri.https('github.com', url!.split('/').last));
     } else {
       throw 'Could not launch $url';
     }
