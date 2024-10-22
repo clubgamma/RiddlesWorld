@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:provider/provider.dart';
+import 'package:riddleworld/categories/Math/math15@Lakkyra/math15HomePage.dart';
 import 'package:riddleworld/main.dart';
 import 'package:riddleworld/categories/Math/math1@jerry2501/math1HomePage.dart';
 import 'package:riddleworld/categories/Math/math5@shobhit907/math5@HomePage.dart';
@@ -174,12 +175,22 @@ class _StateMathRiddles extends State<MathRiddles> {
           }),
       ActionCard(
           name: 'Inheritance',
-          description: 'A math riddle based on the inheritance by @kamal-kaur04',
+          description:
+              'A math riddle based on the inheritance by @kamal-kaur04',
           number: '14',
           onPressed: () {
             onPlayAudio();
             Navigator.of(context)
                 .push(MaterialPageRoute(builder: (ctx) => Math14HomeScreen()));
+          }),
+      ActionCard(
+          name: 'Remainder',
+          description: 'A math riddle based on modular arithmetic by @Lakkyra',
+          number: '15',
+          onPressed: () {
+            onPlayAudio();
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (ctx) => Math15HomeScreen()));
           }),
     ];
 
